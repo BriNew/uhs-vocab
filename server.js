@@ -1,17 +1,5 @@
-// dictionary.create('3', 'Bio', 'ພາສາ ລາວ');
-// dictionary.create('3', 'Anter/o', 'ພາສາ ລາວ');
-
-// app.use(express.static('public'));
-
-// const dictionaryRouter = require('./router');
-// app.use('/dictionary', dictionaryRouter);
-
-// var listener = app.listen(process.env.PORT, function () {
-//   console.log('Your app is listening on port ' + listener.address().port);
-// });
-
 const bodyParser = require('body-parser');
-var express = require('express');
+const express = require('express');
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
@@ -38,7 +26,7 @@ app.get('/terms', (req, res) => {
 			})
 });
 
-app.get('/terms/:id', (req, res) => {
+app.get('/terms/:id', (req, res) => {//returning all 
 	Vocab
 		.findById(req.params.id)
 		.then(term => res.json(term.apiRepr()))
@@ -47,6 +35,7 @@ app.get('/terms/:id', (req, res) => {
 				res.status(500).json({message: 'Internal server error'})
 		});
 });
+
 
 app.get('/terms', (req, res) => {
 	const filters = {};
@@ -80,7 +69,7 @@ app.post('/terms', (req, res) => {
 	Vocab
 		.create({
 			year: req.body.year,
-			type: req.body.year,
+			type: req.body.type,
 			english: req.body.english,
 			lao: req.body.lao
 		})
@@ -100,16 +89,16 @@ app.put('/terms/:id', (req, res) => {
 		console.error(message);
 		return res.status(400).json({message: message});
 	}
-	const toUpdate = [];
+	const updated = {};
 	const updateableFields = ['year', 'type', 'english', 'lao'];
 
 	updateableFields.forEach(field => {
 		if (field in req.body) {
-			toUpdate[field] = req.body[field];
+			updated[field] = req.body[field];
 		}
 	});
 	Vocab
-		.findByIdAndUpdate(req.params.id, {$set: toUpdate})
+		.findByIdAndUpdate(req.params.id, {$set: updated})
 		.then(term => res.status(204).end())
 		.catch(err => res.status(500).json({message: 'Internal server error'}))
 });
