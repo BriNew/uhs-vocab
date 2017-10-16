@@ -1,5 +1,5 @@
 var mockData = {
-    "words": [
+    "word": [
         {
             "id": "1",
             "Year": "3",
@@ -40,7 +40,7 @@ function displayStatusUpdates(data) {
 	   // $('body').append(
     //     '<p>' + data.words[index].english + '</p>');
     // }
-    data.words.forEach(function(word){ 
+    data.word.forEach(function(word){ 
         $('body').append(
             '<p>' + word.english + '</p>');
     })
