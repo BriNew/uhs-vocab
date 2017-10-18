@@ -1,57 +1,70 @@
-var mockData = {
-    "word": [
-        {
-            "id": "1",
-            "Year": "3",
-            "type": "root",
-            "english": "abdomin/o",
-            "lao": "ພາສາ ລາວ"
-        },
-        {
-            "id": "2",
-            "Year": "3",
-            "type": "root",
-            "english": "bio",
-            "lao": "ພາສາ ລາວ"
-        },    
-        {
-            "id": "3",
-            "Year": "3",
-            "type": "root",
-            "english": "aden/o",
-            "lao": "ພາສາ ລາວ"
-        },
-        {
-            "id": "4",
-            "Year": "3",
-            "type": "root",
-            "english": "anter/o",
-            "lao": "ພາສາ ລາວ"
-        }
-    ]
-};
+$(document).ready(function() {
+	console.log("Hello World");
 
-function getRecentStatusUpdates(callbackFn) {
-	setTimeout(function(){ callbackFn(mockData)}, 100);
-}
+	function getTerms() {
+		$.getJSON("/terms", {"type" : "root"},
+			function(data) {
+				console.log(data);
+				// const termsTitle = data.terms.map((term, index) => showTitle(term));
+				// $('#title').html(termsTitle);
+				const terms = data.terms.map((term, index) => showTerms(term));
+  			$('#results').html(terms);
+			});
+	};	
 
-function displayStatusUpdates(data) {
-    // for (index in data.words) {
-	   // $('body').append(
-    //     '<p>' + data.words[index].english + '</p>');
-    // }
-    data.word.forEach(function(word){ 
-        $('body').append(
-            '<p>' + word.english + '</p>');
-    })
-}
+	// function showTitle(term) {
+	//   return `
+ //          <h2>${term.english}</h2>
+ //      `;
+	// }
+
+	// function showDef(term) {
+	//   return `
+ //        <li>
+	// 	  <h2>${term.english}</h2>
+ //          <p>${term.year}</p>
+ //          <p>${term.type}</p>
+ //          <p>${term.lao}</p>
+ //        </li>
+ //      `;
+	// }
+
+	function showTerms(term) {
+	  return `
+		      	<div class="col-6">
+		          <div class="frame">
+		            <div class="card" id="card1">
+		              <div class="card_title" id="title1">
+		                <h2 class="word">${term.english}</h2>
+		              </div>
+		              <div class="card_content" id="content1">
+		                <p class="definition">${term.year}</p>
+		                <p class="definition">${term.type}</p>
+		                <p class="definition">${term.lao}</p>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+
+        
+      `;
+	}
 
 
+          // <div class="frame">
+          //   <div class="card" id="card1">
+          //     <div class="card_title" id="title1">
+          //       <h2 class="word">${term.english}</h2>
+          //     </div>
+          //     <div class="card_content" id="content1">
+          //       <p class="definition">${term.year}</p>
+          //       <p class="definition">${term.type}</p>
+          //       <p class="definition">${term.lao}</p>
+          //     </div>
+          //   </div>
+          // </div>
 
-function getAndDisplayStatusUpdates() {
-	getRecentStatusUpdates(displayStatusUpdates);
-}
+	getTerms();
 
-$(function() {
-	getAndDisplayStatusUpdates();
-})
+
+});

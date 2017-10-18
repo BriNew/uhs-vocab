@@ -9,6 +9,7 @@ const {Vocab} = require('./models');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(express.static('public'))
 
 app.get('/terms', (req, res) => {
 	Vocab
@@ -25,6 +26,11 @@ app.get('/terms', (req, res) => {
 				res.status(500).json({message: 'Internal server error'})
 			})
 });
+
+app.get('/', (req, res) => {
+	res.sendFile(__dirname+'/public/index.html')
+})
+
 
 app.get('/terms/:id', (req, res) => {//returning all 
 	Vocab
