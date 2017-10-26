@@ -6,6 +6,7 @@
     <title>UHS Dictionary</title>
     <link rel="stylesheet" href="float-grid.css" type="text/css" />
     <link rel="stylesheet" href="index.css" type="text/css" />
+    <script src="https://use.fontawesome.com/083bde56bc.js"></script>
   </head>
   <body>
     <header role="banner">
@@ -16,10 +17,47 @@
       </div>
     </header>
     <main>
+      <div id="nav">
+        <form id="find_terms" class="row">
+          <div id="filter_bar" class="col-12">
 
+            <div class="row">
+            
+              <div id="filter_year" class="col-4">
+                <label for="year">Year:</label>
+                <select id="year">
+                  <option>1</option>
+                  <option>2</option>
+                  <option selected="selected">3</option>
+                </select>
+              </div>
+                <div id="filter_type" class="col-4">
+                  <label for="type_select">Type:</label>
+                  <select id="type_select">
+                    <option>prefix</option>
+                    <option selected="selected">root</option>
+                    <option>suffix</option>
+                  </select>
+                </div> 
+              <div>
+                <!-- <button id="submit" type="submit" class="col-4" ></button> -->
+                <button id="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </div>
+           
+
+            </div>
+ 
+          
+          </div>
+        </form>
+
+      </div>
+      <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
       <div id="results" class="row">
+
         
       </div>
+
 
 <!--           <div class="frame">
             <div class="card" id="card1">

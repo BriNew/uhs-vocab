@@ -11,22 +11,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.static('public'))
 
-app.get('/terms', (req, res) => {
-	Vocab
-		.find()
-		.then(terms => {
-			res.json({
-				terms: terms.map(
-					(term) => term.apiRepr())
-			});
-		})
-		.catch(
-			err => {
-				console.error(err);
-				res.status(500).json({message: 'Internal server error'})
-			})
-});
-
 app.get('/', (req, res) => {
 	res.sendFile(__dirname+'/public/index.html')
 })
@@ -42,10 +26,25 @@ app.get('/terms/:id', (req, res) => {//returning all
 		});
 });
 
+// app.get('/terms', (req, res) => {
+// 	Vocab
+// 		.find()
+// 		.then(terms => {
+// 			res.json({
+// 				terms: terms.map(
+// 					(term) => term.apiRepr())
+// 			});
+// 		})
+// 		.catch(
+// 			err => {
+// 				console.error(err);
+// 				res.status(500).json({message: 'Internal server error'})
+// 			})
+// });
 
 app.get('/terms', (req, res) => {
 	const filters = {};
-	const queryableFields = ['year', 'type'];
+	const queryableFields = ['year', 'type_select'];
 	queryableFields.forEach(field => {
 		if (req.query[field]) {
 			filters[field] = req.query[field];
@@ -53,9 +52,16 @@ app.get('/terms', (req, res) => {
 	});
 	Vocab
 		.find(filters)
-		.then(terms => res.json(
-			terms.map(term => term.apiRepr())
-		))
+		.then(terms => {
+			res.json({
+				terms: terms.map(
+					(term) => term.apiRepr())
+			});
+		})
+		// .find(filters)
+		// .then(terms => res.json( 
+		// 	terms.map(term => term.apiRepr())
+		// ))
 		.catch(err => {
 			console.log(err);
 			res.status(500).json({message: 'Internal server error'})
@@ -75,7 +81,7 @@ app.post('/terms', (req, res) => {
 	Vocab
 		.create({
 			year: req.body.year,
-			type: req.body.type,
+			type_select: req.body.type_select,
 			english: req.body.english,
 			lao: req.body.lao
 		})
@@ -96,7 +102,7 @@ app.put('/terms/:id', (req, res) => {
 		return res.status(400).json({message: message});
 	}
 	const updated = {};
-	const updateableFields = ['year', 'type', 'english', 'lao'];
+	const updateableFields = ['year', 'type_select', 'english', 'lao'];
 
 	updateableFields.forEach(field => {
 		if (field in req.body) {

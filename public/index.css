@@ -8,20 +8,41 @@ header {
   color: #FFF1E7;
 }
 
+#nav{
+  background-color: #FFF1E7;
 
-
-.col-6 {
-   margin-top: 20px;
 }
+
+
+
+#filter_year, #filter_type, #submit {
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+}
+
+
+
+
+
+
+/*.col-4 {
+   margin-top: 20px;
+
+}*/
 
 .frame {
   background-color: #FFF1E7;
   padding: 10px;
+  margin-top: 20px;
   /*box-shadow: 10px 10px 5px #888888;*/
+ 
+
 }
 
 .card {
   border: 2px solid grey;
+
 }
 
 .card_title {
@@ -37,6 +58,8 @@ header {
   padding-top: 1px;
   padding-bottom: 200px;
   background-color: #FFF1E7;
+  max-height: 200px;
+
 }
 
 h3 {
@@ -84,3 +107,26 @@ h3 {
          -o-transform:skew(8deg) rotate(3deg);
             transform:skew(8deg) rotate(3deg);
 }
+
+
+/*#filter_year {
+    border: 1px solid #ccc;
+    width: 120px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: white;
+}
+
+#filter_year select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+}
+
+#filter_year select:focus {
+  outline: none;
+}*/
