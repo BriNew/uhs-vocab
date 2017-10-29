@@ -69,6 +69,7 @@ app.get('/terms', (req, res) => {
 });
 
 app.post('/terms', (req, res) => {
+	console.log(req.body);
 	const requiredFields = ['year', 'english', 'lao'];
 	for (let i=0; i<requiredFields.length; i++) {
 		const field = requiredFields[i];

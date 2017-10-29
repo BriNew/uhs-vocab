@@ -17,7 +17,39 @@
       </div>
     </header>
     <main>
-      <div id="nav">
+      <form id="find_terms">
+        <nav id="nav" role="navigation"> 
+          <ul id="ul_outer">
+
+            <li class="li_outer"><a href="#add_word" class="titles_nav">Add Word</a></li>
+
+            <li class="li_outer"> <a href="" class="titles_nav">Year</a>
+              <ul class="ul_inner">
+                <li class="li_inner"><a href="#nav_year_1" class="subtitles_nav_year">1</a></li>
+                <li class="li_inner"><a href="#nav_year_2" class="subtitles_nav_year">2</a></li>
+                <li class="li_inner"><a href="#nav_year_3" class="subtitles_nav_year">3</a></li>
+              </ul>
+            </li>
+            
+            <li class="li_outer"> <a href="" class="titles_nav">Part Of Word</a>
+              <ul class="ul_inner">
+                <li class="li_inner"><a href="#nav_part_prefix" class="subtitles_nav_part">Prefix</a></li>
+                <li class="li_inner"><a href="#nav_part_root" class="subtitles_nav_part">Root</a></li>
+                <li class="li_inner"><a href="#nav_part_suffix" class="subtitles_nav_part">Suffix</a></li>
+              </ul>
+            </li>
+
+            <li class="li_outer" id="button_submit"><a href="#find_terms" class="titles_nav">Search</a></li>
+            <!-- <li class="li_outer"><button id="submit"><i class="fa fa-search" aria-hidden="true"></i></button></li> -->
+        
+          </ul>
+        </nav>
+      </form>
+
+      <p id="year"></p>
+      <p id="part"></p>
+
+<!--       <div id="nav">
         <form id="find_terms" class="row">
           <div id="filter_bar" class="col-12">
 
@@ -40,19 +72,39 @@
                   </select>
                 </div> 
               <div>
-                <!-- <button id="submit" type="submit" class="col-4" ></button> -->
                 <button id="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
               </div>
-           
 
             </div>
- 
-          
+    
           </div>
-        </form>
+        </form>      
 
+      </div> -->
+
+      <form id="form_post">
+
+        <input type="text" id="english_input" class="text-input" placeholder="english" required>
+
+        <input type="number" id="year_input" class="text-input" placeholder="year" required=>
+
+        <input type="text" id="type_select_input" class="text-input" placeholder="prefix, root, or suffix">
+
+        <input type="text" id="lao_input" class="text-input" placeholder="lao" required>
+
+        <input type="submit">
+
+      </form>
+      <div id="terms_new">
+
+        <p id="english_new"></p>
+        <p id="year_new"></p>
+        <p id="type_select_new"></p>
+        <p id="lao_new"></p>
+        
       </div>
-      <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
+      
+
       <div id="results" class="row">
 
         
