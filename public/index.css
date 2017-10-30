@@ -2,10 +2,11 @@
 html {
 /*  background-color: #F7E8DE;*/
 }
-header {
+#banner {
   /*border: 1px solid black;*/
-  background-color: #A64C4C;
+  background-color: #843c3c;
   color: #FFF1E7;
+
 }
 
 /*#FFF1E7 offwhite/red */
@@ -14,6 +15,10 @@ header {
 /*#2FA4B6 boardwalk blue*/
 /*#BAD9DB greyish blue*/
 
+.li_inner  {
+  width: 100%;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -21,6 +26,11 @@ ul {
 a, a:hover {
   text-decoration: none;
 }
+
+#nav {
+  margin-top: -16px;
+}
+
 #nav li {
   position: relative;
 }
@@ -50,6 +60,7 @@ a, a:hover {
 
 .li_outer:hover{
   background-color: #843c3c;
+  z-index: 3000;
 }
   
 #nav li ul {
@@ -59,15 +70,17 @@ a, a:hover {
 
 #nav li:hover ul {
   display: block;
+  z-index: 3000;
 }
 
 .subtitles_nav_year, .subtitles_nav_part {
   font-size: 20px; 
-  border-top: 1px solid #FFF1E7;
+  border-top: 1px solid #843c3c;
   padding: 10px; 
 }
 .subtitles_nav_year:hover, .subtitles_nav_part:hover {
   background-color: #843c3c;
+  z-index: 3000;
 }
 
 #submit {
@@ -100,6 +113,8 @@ a, a:hover {
   background-color: #FFF1E7;
   padding: 10px;
   margin-top: 20px;
+  
+
   /*box-shadow: 10px 10px 5px #888888;*/
  
 
@@ -127,7 +142,7 @@ a, a:hover {
 
 }
 
-h3 {
+.word, .definition {
   margin-left: 10px;
   margin-right: 10px;
   text-align: center;

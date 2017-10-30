@@ -10,28 +10,27 @@
   </head>
   <body>
     <header role="banner">
-      <div class="row">
-        <div class="col-12">
-          <h1>Medical English to Lao Dictionary</h1>
-        </div>
+    <div class="row"> 
+      <div class="col-12" id="banner">
+        <h1>UHS Medical English Vocabulary</h1>
       </div>
-    </header>
-    <main>
-      <form id="find_terms">
-        <nav id="nav" role="navigation"> 
-          <ul id="ul_outer">
+    </div>
 
-            <li class="li_outer"><a href="#add_word" class="titles_nav">Add Word</a></li>
+    <div class="row">
+      <nav id="nav" role="navigation"> 
+        <ul id="ul_outer">
 
-            <li class="li_outer"> <a href="" class="titles_nav">Year</a>
+            <li class="li_outer col-3"><a href="#add_word" class="titles_nav">Add Word</a></li>
+
+            <li class="li_outer col-3"><a href="" class="titles_nav">Class</a>
               <ul class="ul_inner">
-                <li class="li_inner"><a href="#nav_year_1" class="subtitles_nav_year">1</a></li>
-                <li class="li_inner"><a href="#nav_year_2" class="subtitles_nav_year">2</a></li>
-                <li class="li_inner"><a href="#nav_year_3" class="subtitles_nav_year">3</a></li>
+                <li class="li_inner"><a href="#nav_year_1" class="subtitles_nav_year">Year 1</a></li>
+                <li class="li_inner"><a href="#nav_year_2" class="subtitles_nav_year">Year 2</a></li>
+                <li class="li_inner"><a href="#nav_year_3" class="subtitles_nav_year">Year 3</a></li>
               </ul>
             </li>
             
-            <li class="li_outer"> <a href="" class="titles_nav">Part Of Word</a>
+            <li class="li_outer col-3"> <a href="" class="titles_nav">Prefix/Root/Suffix</a>
               <ul class="ul_inner">
                 <li class="li_inner"><a href="#nav_part_prefix" class="subtitles_nav_part">Prefix</a></li>
                 <li class="li_inner"><a href="#nav_part_root" class="subtitles_nav_part">Root</a></li>
@@ -39,12 +38,45 @@
               </ul>
             </li>
 
-            <li class="li_outer" id="button_submit"><a href="#find_terms" class="titles_nav">Search</a></li>
+            <li class="li_outer col-3" id="button_submit"><a href="#find_terms" class="titles_nav">Search</a></li>
             <!-- <li class="li_outer"><button id="submit"><i class="fa fa-search" aria-hidden="true"></i></button></li> -->
+
+        </ul>
+      </nav>
+    </div>
+
+    </header>
+    <main>
+
+<!--       <form id="find_terms" class="row"> -->
+<!--         <nav id="nav" role="navigation" class="row"> 
+          <ul id="ul_outer">
+
+            <li class="li_outer col-3"><a href="#add_word" class="titles_nav">Add Word</a></li>
+
+            <li class="li_outer col-3"><a href="" class="titles_nav">Year</a>
+              <ul class="ul_inner">
+                <li class="li_inner"><a href="#nav_year_1" class="subtitles_nav_year">1</a></li>
+                <li class="li_inner"><a href="#nav_year_2" class="subtitles_nav_year">2</a></li>
+                <li class="li_inner"><a href="#nav_year_3" class="subtitles_nav_year">3</a></li>
+              </ul>
+            </li>
+            
+            <li class="li_outer col-3"> <a href="" class="titles_nav">Part Of Word</a>
+              <ul class="ul_inner">
+                <li class="li_inner"><a href="#nav_part_prefix" class="subtitles_nav_part">Prefix</a></li>
+                <li class="li_inner"><a href="#nav_part_root" class="subtitles_nav_part">Root</a></li>
+                <li class="li_inner"><a href="#nav_part_suffix" class="subtitles_nav_part">Suffix</a></li>
+              </ul>
+            </li>
+
+            <li class="li_outer col-3" id="button_submit"><a href="#find_terms" class="titles_nav">Search</a></li>
+
         
           </ul>
-        </nav>
-      </form>
+        </nav> -->
+                    <!-- <li class="li_outer"><button id="submit"><i class="fa fa-search" aria-hidden="true"></i></button></li> -->
+<!--       </form> -->
 
       <p id="year"></p>
       <p id="part"></p>
@@ -84,7 +116,7 @@
 
       <form id="form_post">
 
-        <input type="text" id="english_input" class="text-input" placeholder="english" required>
+<!--         <input type="text" id="english_input" class="text-input" placeholder="english" required>
 
         <input type="number" id="year_input" class="text-input" placeholder="year" required=>
 
@@ -92,7 +124,23 @@
 
         <input type="text" id="lao_input" class="text-input" placeholder="lao" required>
 
-        <input type="submit">
+        <input type="submit"> -->
+
+            <div class="col-4">
+              <div class="frame">
+                <div class="card" id="card1">
+                  <div class="card_title" id="title1">
+                    <h3 class="word"><input type="text" id="english_input" class="text-input" placeholder="english" required></h3>
+                  </div>
+                  <div class="card_content" id="content1">
+                    <p class="definition" id="year"><input type="text" id="year_input" class="text-input" placeholder="year" required=></p>
+                    <p class="definition"><input type="text" id="type_select_input" class="text-input" placeholder="prefix, root, or suffix"></p>
+                    <p class="definition"><input type="text" id="lao_input" class="text-input" placeholder="lao" required></p>
+                    <input type="submit">
+                  </div>
+                </div>
+              </div>
+            </div>
 
       </form>
       <div id="terms_new">

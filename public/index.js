@@ -24,7 +24,7 @@ $(document).ready(function() {
 		                <h3 class="word">${term.english}</h3>
 		              </div>
 		              <div class="card_content" id="content1">
-		                <p class="definition" id="year">${term.year}</p>
+		                <p class="definition" id="year">Year ${term.year}</p>
 		                <p class="definition">${term.type_select}</p>
 		                <p class="definition">${term.lao}</p>
 		              </div>
@@ -84,7 +84,6 @@ $(document).ready(function() {
 	$('#form_post').submit(event => {
 	  event.preventDefault();
 	  $('#form_post').hide();
-	  $('#results').show();
 
 	  englishInput = $('#english_input').val();
 	  // $('#english_new').text(englishInput);
@@ -120,7 +119,8 @@ $(document).ready(function() {
 	  		console.log(res);
 	  	}
 	  })
-
+	   getTerms();
+	   $('#results').show();
 	});
 
  //  $('#find_terms').submit(function(event) {
@@ -128,7 +128,9 @@ $(document).ready(function() {
  //    getTerms();
 	// });
 
-	  $('a[href="#find_terms"]').click(function(){
+
+
+  $('a[href="#find_terms"]').click(function(){
     event.preventDefault();
     $('#results').show();
     $('#form_post').hide();
