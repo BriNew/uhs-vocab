@@ -1,12 +1,15 @@
 const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
 
 const vocabSchema = mongoose.Schema({
   // id:{type: String, required: true},
   year:{type: String, required: true},//change to Number?
-  type_select:{type: String, required: false},//change to type_select?
-  english:{type: String, required: true},
+  type_select:{type: String, required: true},//change to type_select?
+  english:{type: String, required: true, unique: true},
   lao:{type: String, required: true}
 });
+
+vocabSchema.plugin(uniqueValidator);
 
 vocabSchema.methods.apiRepr = function() {
   return {

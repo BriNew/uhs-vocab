@@ -4,145 +4,74 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>UHS Dictionary</title>
-    <link rel="stylesheet" href="float-grid.css" type="text/css" />
+<!--     <link rel="stylesheet" href="float-grid.css" type="text/css" /> -->
     <link rel="stylesheet" href="index.css" type="text/css" />
     <script src="https://use.fontawesome.com/083bde56bc.js"></script>
   </head>
   <body>
     <header role="banner">
-    <div class="row"> 
-      <div class="col-12" id="banner">
-        <h1>UHS Medical English Vocabulary</h1>
-      </div>
-    </div>
 
-    <div class="row">
-      <nav id="nav" role="navigation"> 
-        <ul id="ul_outer">
+      <div class="banner_container">
+        <div class="banner">
+          <h1 class="banner_title">UHS Medical English Vocabulary</h1>
+        </div>
+      </div>
+
+
+      <nav id="nav" role="navigation" class="nav_bar"> 
+        <ul id="ul_outer" class="ul_outer">
 
             <li class="li_outer col-3"><a href="#add_word" class="titles_nav">Add Word</a></li>
 
-            <li class="li_outer col-3"><a href="" class="titles_nav">Class</a>
-              <ul class="ul_inner">
+            <li class="li_outer col-3"><a href="#mobile_dropdown_class_outer" class="titles_nav titles_nav_class">Class</a>
+              <ul class="ul_inner" id="mobile_dropdown_class_inner">
+                <form id="form_all_years"><li class="li_inner"><a href="#nav_year_all" class="subtitles_nav_year">All</a></li></form>
                 <li class="li_inner"><a href="#nav_year_1" class="subtitles_nav_year">Year 1</a></li>
                 <li class="li_inner"><a href="#nav_year_2" class="subtitles_nav_year">Year 2</a></li>
                 <li class="li_inner"><a href="#nav_year_3" class="subtitles_nav_year">Year 3</a></li>
               </ul>
             </li>
             
-            <li class="li_outer col-3"> <a href="" class="titles_nav">Prefix/Root/Suffix</a>
-              <ul class="ul_inner">
+            <li class="li_outer col-3"> <a href= "#mobile_dropdown_part_outer" class="titles_nav titles_nav_part">Part</a>
+              <ul class="ul_inner" id="mobile_dropdown_part_inner">
+                <form id="form_all_parts"><li class="li_inner"><a href="#nav_part_all" class="subtitles_nav_part">All</a></li></form>
                 <li class="li_inner"><a href="#nav_part_prefix" class="subtitles_nav_part">Prefix</a></li>
                 <li class="li_inner"><a href="#nav_part_root" class="subtitles_nav_part">Root</a></li>
                 <li class="li_inner"><a href="#nav_part_suffix" class="subtitles_nav_part">Suffix</a></li>
               </ul>
             </li>
-
-            <li class="li_outer col-3" id="button_submit"><a href="#find_terms" class="titles_nav">Search</a></li>
-            <!-- <li class="li_outer"><button id="submit"><i class="fa fa-search" aria-hidden="true"></i></button></li> -->
+<!--             <form id="form_get"> -->
+            <li class="li_outer col-3" id="button_submit"><a href="#find_terms" class="titles_nav" id="search_text">Search</a>
+<!--             </form> -->
 
         </ul>
       </nav>
-    </div>
+
 
     </header>
     <main>
-
-<!--       <form id="find_terms" class="row"> -->
-<!--         <nav id="nav" role="navigation" class="row"> 
-          <ul id="ul_outer">
-
-            <li class="li_outer col-3"><a href="#add_word" class="titles_nav">Add Word</a></li>
-
-            <li class="li_outer col-3"><a href="" class="titles_nav">Year</a>
-              <ul class="ul_inner">
-                <li class="li_inner"><a href="#nav_year_1" class="subtitles_nav_year">1</a></li>
-                <li class="li_inner"><a href="#nav_year_2" class="subtitles_nav_year">2</a></li>
-                <li class="li_inner"><a href="#nav_year_3" class="subtitles_nav_year">3</a></li>
-              </ul>
-            </li>
-            
-            <li class="li_outer col-3"> <a href="" class="titles_nav">Part Of Word</a>
-              <ul class="ul_inner">
-                <li class="li_inner"><a href="#nav_part_prefix" class="subtitles_nav_part">Prefix</a></li>
-                <li class="li_inner"><a href="#nav_part_root" class="subtitles_nav_part">Root</a></li>
-                <li class="li_inner"><a href="#nav_part_suffix" class="subtitles_nav_part">Suffix</a></li>
-              </ul>
-            </li>
-
-            <li class="li_outer col-3" id="button_submit"><a href="#find_terms" class="titles_nav">Search</a></li>
-
-        
-          </ul>
-        </nav> -->
-                    <!-- <li class="li_outer"><button id="submit"><i class="fa fa-search" aria-hidden="true"></i></button></li> -->
-<!--       </form> -->
-
-      <p id="year"></p>
-      <p id="part"></p>
-
-<!--       <div id="nav">
-        <form id="find_terms" class="row">
-          <div id="filter_bar" class="col-12">
-
-            <div class="row">
-            
-              <div id="filter_year" class="col-4">
-                <label for="year">Year:</label>
-                <select id="year">
-                  <option>1</option>
-                  <option>2</option>
-                  <option selected="selected">3</option>
-                </select>
-              </div>
-                <div id="filter_type" class="col-4">
-                  <label for="type_select">Type:</label>
-                  <select id="type_select">
-                    <option>prefix</option>
-                    <option selected="selected">root</option>
-                    <option>suffix</option>
-                  </select>
-                </div> 
-              <div>
-                <button id="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-              </div>
-
-            </div>
-    
-          </div>
-        </form>      
-
-      </div> -->
-
-      <form id="form_post">
-
-<!--         <input type="text" id="english_input" class="text-input" placeholder="english" required>
-
-        <input type="number" id="year_input" class="text-input" placeholder="year" required=>
-
-        <input type="text" id="type_select_input" class="text-input" placeholder="prefix, root, or suffix">
-
-        <input type="text" id="lao_input" class="text-input" placeholder="lao" required>
-
-        <input type="submit"> -->
-
-            <div class="col-4">
-              <div class="frame">
-                <div class="card" id="card1">
-                  <div class="card_title" id="title1">
-                    <h3 class="word"><input type="text" id="english_input" class="text-input" placeholder="english" required></h3>
-                  </div>
-                  <div class="card_content" id="content1">
-                    <p class="definition" id="year"><input type="text" id="year_input" class="text-input" placeholder="year" required=></p>
-                    <p class="definition"><input type="text" id="type_select_input" class="text-input" placeholder="prefix, root, or suffix"></p>
-                    <p class="definition"><input type="text" id="lao_input" class="text-input" placeholder="lao" required></p>
-                    <input type="submit">
-                  </div>
+      
+      <form id="form_post" class="row">
+<!--         <div class="row"> -->
+          <div class="col-4">
+            <div class="frame">
+              <div class="card" id="card1">
+                <div class="card_title" id="title1">
+                  <h3 class="word"><input type="text" id="english_input" class="text-input" placeholder="english" required></h3>
+                </div>
+                <div class="card_content" id="content1">
+                  <p class="definition" id="year"><input type="text" id="year_input" class="text-input" placeholder="year" required=></p>
+                  <p class="definition"><input type="text" id="type_select_input" class="text-input" placeholder="prefix, root, or suffix"></p>
+                  <p class="definition"><input type="text" id="lao_input" class="text-input" placeholder="lao" required></p>
+<!--                   <input id="submit_post" type="submit" class="col-12"> -->
+                  <button id="submit_post">submit</button>
                 </div>
               </div>
             </div>
-
+          </div>
+<!--         </div> -->
       </form>
+      
       <div id="terms_new">
 
         <p id="english_new"></p>
@@ -153,86 +82,19 @@
       </div>
       
 
-      <div id="results" class="row">
+      <div class="results_container">
+        <div id="results" class="results">
 
-        
+
+        </div>
       </div>
-
-
-<!--           <div class="frame">
-            <div class="card" id="card1">
-              <div class="card_title" id="title1">
-                <h2 class="word">english medical term</h2>
-              </div>
-              <div class="card_content" id="content1">
-                <h3 class="definition">this is a bunch of words describing my words</h3>
-              </div>
-            </div>
-          </div> -->
-
       
-
-      
-<!--        <div class="row"> 
-        <div class="col-6">
-          <div class="frame">
-            <div class="card" id="card1">
-              <div class="card_title" id="title1">
-                <h2 class="word">english medical term</h2>
-              </div>
-              <div class="card_content" id="content1">
-                <h3 class="definition">this is a bunch of words describing my words</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-6">
-          <div class="frame">
-            <div class="card" id="card2">
-              <div class="card_title" id="title2">
-                <h2 class="word">english medical term</h2>
-              </div>
-              <div class="card_content" id="content2">
-                <h3 class="definition">this is a bunch of words describing my words</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-      </div>   -->
-     
-<!--        <div class="row"> 
-        <div class="col-6">
-          <div class="frame">
-            <div class="card" id="card3">
-              <div class="card_title" id="title3">
-                <h2 class="word">english medical term</h2>
-              </div>
-              <div class="card_content" id="content3">
-                <h3 class="definition">this is a bunch of words describing my words</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-6">
-          <div class="frame">
-            <div class="card" id="card4">
-              <div class="card_title" id="title4">
-                <h2 class="word">english medical term</h2>
-              </div>
-              <div class="card_content" id="content4">
-                <h3 class="definition">this is a bunch of words describing my words</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-      </div>   -->
-      
+      <h3 id="no_results_message">No words matching your request, please try again</h3>
+      <p id="year"></p>
+      <p id="part"></p>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
+
