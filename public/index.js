@@ -53,12 +53,12 @@ $(document).ready(function() {
  //      });
 
   $('a[href="#mobile_dropdown_class_outer"]').click(function(){
-	  		$('#mobile_dropdown_class_inner').show();
+	  		$('#mobile_dropdown_class_inner').toggle();
  	}); 
 
 
   $('a[href="#mobile_dropdown_part_outer"]').click(function(){
-  	$('#mobile_dropdown_part_inner').show();
+  	$('#mobile_dropdown_part_inner').toggle();
  }); 
 
   $('a[href="#add_word"]').click(function(){
@@ -155,7 +155,7 @@ $(document).ready(function() {
 	$('#form_post').submit(event => {
 	  event.preventDefault();
 	  $('#form_post').hide();
-	  
+
 
 	  englishInput = $('#english_input').val();
 	  // $('#english_new').text(englishInput);

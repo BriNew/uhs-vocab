@@ -1,9 +1,23 @@
 /*#FFF1E7 offwhite/red */
-/*#9D2323 deep red */
+/*#A64C4C deep red */
 /*#27AE98 teal/mint*/
 /*#2FA4B6 boardwalk blue*/
 /*#BAD9DB greyish blue*/
 /*#843c3c deeper red*/
+/*#EFE6DD eggshell*/
+/*#BBCBCB pastel blue*/
+/*#837A75 sonic silver*/
+
+html{
+  background-color: white;
+}
+h1{
+  font-family: 'Libre Baskerville', serif;
+
+}
+.titles_nav, .subtitles_nav{
+  font-family: 'Slabo 27px', serif;
+}
 #no_results_message {
   display: none;
 }
@@ -30,6 +44,9 @@
   .li_outer{
 /*    border: 1px solid #843c3c;*/
   }
+/*  .frame {
+    padding-bottom: 10px;
+  }*/
 }
 
 @media (min-width:380px) and (max-width: 639px) { 
@@ -78,6 +95,10 @@
 }
 }
 
+.banner_title {
+  padding-left: 2.2em;
+}
+
 .li_outer {
 /*  border: 1px solid #843c3c; */
 /*  width: 25%;*/
@@ -90,7 +111,7 @@
   position: relative;
 }
 #nav li a {
-  color: #FFF1E7;
+  color: #EFE6DD;
   display: block;
 }
 
@@ -104,7 +125,7 @@
 }*/
 
 .banner {
-  color: #FFF1E7;
+  color: #EFE6DD;
   max-width: 1000px;
   margin: auto;
   background-color: #843c3c;
@@ -115,24 +136,32 @@
   max-width: 1000px;
 }
 
+/*#FFF1E7 offwhite/red */
+/*#9D2323 deep red */
+/*#27AE98 teal/mint*/
+/*#2FA4B6 boardwalk blue*/
+/*#BAD9DB greyish blue*/
+/*#843c3c deeper red*/
+
 .frame {
   background-color: #FFF1E7;
   padding: 10px;
-  padding-bottom: 13px;
+  padding-bottom: 30px;
   margin-top: 20px;
 
 }
 
 .card {
-  border: 2px solid grey;
+  border: 2px solid #837A75;
+  padding-bottom: 20px;
 
 }
 
 .card_title {
   padding-top: 1px;
-  background-color: #BAD9DB;
-  border-bottom: 2px solid gray;
-  color: black;
+  background-color: #BBCBCB;
+  border-bottom: 2px solid #837A75;
+  color: #1C2321;
   text-align: center;
 }
 
@@ -157,12 +186,6 @@
   margin: 0 auto;
   width: 50%;
 }
-
-/*#FFF1E7 offwhite/red */
-/*#9D2323 deep red */
-/*#27AE98 teal/mint*/
-/*#2FA4B6 boardwalk blue*/
-/*#BAD9DB greyish blue*/
 
 
 .frame
@@ -243,8 +266,9 @@ a, a:hover {
 
 #ul_outer {
   height: 65px; 
-  background-color: #A64C4C;
+  background-color: #4ECDC4;
 }
+
 
 .titles_nav {
   height: 100%;
@@ -276,12 +300,12 @@ a, a:hover {
 }
 
 #button_submit:hover {
-  background-color: #BAD9DB;
+  background-color: #843c3c;
   color: black;
 }
 
 #search_text:hover {
-  color: #843c3c
+  color: #F7FFF7
 }
 
 #submit {
