@@ -5,6 +5,8 @@ $(document).ready(function() {
 
 	function getTerms() {
 		let terms;
+		// $('#mobile_dropdown_class_inner').show();
+		// $('#mobile_dropdown_part_inner').show();
 		$.getJSON("/terms", {year: year, type_select: type_select},
 			function(data) {
 				console.log(data);
@@ -16,6 +18,7 @@ $(document).ready(function() {
 					console.log("please search again");
 				}
 			});
+
 			
 	};	
 
@@ -41,25 +44,81 @@ $(document).ready(function() {
       `;
 	}
 
-	// $('#target')
- //      .click(function(event) {
- //        alert('Hello!');
- //      })
- //      .click(function(event) {
- //        alert('Hello again!');
- //      })
- //      .click(function(event) {
- //        alert('Hello yet again!');
- //      });
-
-  $('a[href="#mobile_dropdown_class_outer"]').click(function(){
-	  		$('#mobile_dropdown_class_inner').toggle();
- 	}); 
 
 
-  $('a[href="#mobile_dropdown_part_outer"]').click(function(){
-  	$('#mobile_dropdown_part_inner').toggle();
+if (window.matchMedia("(max-width: 640px)").matches) {
+    $('a[href="#mobile_dropdown_class_outer"]').click(function(){
+  		$('#mobile_dropdown_class_inner').toggle();
  }); 
+}; 
+
+if (window.matchMedia("(max-width: 640px)").matches) {
+    $('a[href="#mobile_dropdown_part_outer"]').click(function(){
+  		$('#mobile_dropdown_part_inner').toggle();
+ }); 
+}; 
+
+if (window.matchMedia("(max-width: 640px)").matches) {
+    $('a[href="#nav_part_all"]').click(function(){
+  		$('#mobile_dropdown_part_inner').toggle();
+ }); 
+}; 
+
+if (window.matchMedia("(max-width: 640px)").matches) {
+    $('a[href="#nav_part_prefix"]').click(function(){
+  		$('#mobile_dropdown_part_inner').toggle();
+ }); 
+}; 
+
+if (window.matchMedia("(max-width: 640px)").matches) {
+    $('a[href="#nav_part_root"]').click(function(){
+  		$('#mobile_dropdown_part_inner').toggle();
+ }); 
+}; 
+
+if (window.matchMedia("(max-width: 640px)").matches) {
+    $('a[href="#nav_part_suffix"]').click(function(){
+  		$('#mobile_dropdown_part_inner').toggle();
+ }); 
+}; 
+
+if (window.matchMedia("(max-width: 640px)").matches) {
+    $('a[href="#nav_year_all"]').click(function(){
+  		$('#mobile_dropdown_class_inner').toggle();
+ }); 
+}; 
+
+if (window.matchMedia("(max-width: 640px)").matches) {
+    $('a[href="#nav_year_1"]').click(function(){
+  		$('#mobile_dropdown_class_inner').toggle();
+ }); 
+}; 
+
+if (window.matchMedia("(max-width: 640px)").matches) {
+    $('a[href="#nav_year_2"]').click(function(){
+  		$('#mobile_dropdown_class_inner').toggle();
+ }); 
+}; 
+
+if (window.matchMedia("(max-width: 640px)").matches) {
+    $('a[href="#nav_year_3"]').click(function(){
+  		$('#mobile_dropdown_class_inner').toggle();
+ }); 
+}; 
+ 
+
+
+
+ //  $('a[href="#mobile_dropdown_class_outer"]').click(function(){
+ //  	$('#mobile_dropdown_class_inner').toggle();
+ // }); 
+
+ //    $('a[href="#mobile_dropdown_part_outer"]').click(function(){
+ //  	$('#mobile_dropdown_part_inner').toggle();
+ // }); 
+
+		// $('#class_selected').text('Class: Year ' + year);
+		// $('#part_selected').text('Part: ' + type_select);
 
   $('a[href="#add_word"]').click(function(){
   	$('#results').hide();
@@ -72,10 +131,11 @@ $(document).ready(function() {
     // event.preventDefault();
   	$('#year').val(null);
   	year = $('#year').val();
-  	$('#mobile_dropdown_class_inner').hide();
+  	// $('#mobile_dropdown_class_inner').hide();
     $('#results').show();
     $('#form_post').hide();
     $('#no_results_message').hide();
+    $('#class_selected').text('Class: All');
     getTerms();
     // $('#year').val();
     // year = $('#year').val();
@@ -85,8 +145,9 @@ $(document).ready(function() {
   $('a[href="#nav_year_1"]').click(function(){
     $('#year').val(1);
     year = $('#year').val();
-    $('#mobile_dropdown_class_inner').hide();
+    // $('#mobile_dropdown_class_inner').hide();
     $('#no_results_message').hide();
+    $('#class_selected').text('Class: Year ' + year);
     getTerms();
     console.log(year);
  }); 
@@ -94,8 +155,9 @@ $(document).ready(function() {
   $('a[href="#nav_year_2"]').click(function(){
     $('#year').val(2);
     year = $('#year').val();
-    $('#mobile_dropdown_class_inner').hide();
+    // $('#mobile_dropdown_class_inner').hide();
     $('#no_results_message').hide();
+    $('#class_selected').text('Class: Year ' + year);
     getTerms();
     console.log(year);
  }); 
@@ -103,8 +165,9 @@ $(document).ready(function() {
   $('a[href="#nav_year_3"]').click(function(){
     $('#year').val(3);
     year = $('#year').val();
-    $('#mobile_dropdown_class_inner').hide();
+    // $('#mobile_dropdown_class_inner').hide();
     $('#no_results_message').hide();
+    $('#class_selected').text('Class: Year ' + year);
     getTerms();
     console.log(year);
  }); 
@@ -113,18 +176,20 @@ $(document).ready(function() {
   	$("form_all_parts").submit();
   	$('#part').val(null);
   	type_select = $('#part').val();
-  	$('#mobile_dropdown_part_inner').hide();
+  	// $('#mobile_dropdown_part_inner').hide();
     $('#results').show();
     $('#form_post').hide();
     $('#no_results_message').hide();
+    $('#part_selected').text('Part: All');
     getTerms();
  }); 
 
 	$('a[href="#nav_part_prefix"]').click(function(){
     $('#part').val('prefix');
     type_select = $('#part').val();
-    $('#mobile_dropdown_part_inner').hide();
+    // $('#mobile_dropdown_part_inner').hide();
     $('#no_results_message').hide();
+    $('#part_selected').text('Part: ' + type_select);
     getTerms();
     console.log(type_select);
  }); 
@@ -132,8 +197,9 @@ $(document).ready(function() {
 	$('a[href="#nav_part_root"]').click(function(){
     $('#part').val('root');
     type_select = $('#part').val();
-    $('#mobile_dropdown_part_inner').hide();
+    // $('#mobile_dropdown_part_inner').hide();
     $('#no_results_message').hide();
+    $('#part_selected').text('Part: ' + type_select);
     getTerms();
     console.log(type_select);
  }); 
@@ -141,8 +207,9 @@ $(document).ready(function() {
   $('a[href="#nav_part_suffix"]').click(function(){
     $('#part').val('suffix');
     type_select = $('#part').val();
-    $('#mobile_dropdown_part_inner').hide();
+    // $('#mobile_dropdown_part_inner').hide();
     $('#no_results_message').hide();
+    $('#part_selected').text('Part: ' + type_select);
     getTerms();
     console.log(type_select);
  }); 
@@ -154,6 +221,12 @@ $(document).ready(function() {
 
 	$('#form_post').submit(event => {
 	  event.preventDefault();
+	  $('#year').val(null);
+	  year = $('#year').val();
+	  $('#part').val(null);
+	  type_select = $('#part').val();
+	  $('#class_selected').text('Class: All');
+	  $('#part_selected').text('Part: All');
 	  $('#form_post').hide();
 
 
