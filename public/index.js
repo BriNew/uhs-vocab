@@ -5,6 +5,8 @@ $(document).ready(function() {
 
 	function getTerms() {
 		let terms;
+		$('#user_student').hide();
+		$('#user_teacher').hide();
 		// $('#mobile_dropdown_class_inner').show();
 		// $('#mobile_dropdown_part_inner').show();
 		$.getJSON("/terms", {year: year, type_select: type_select},
@@ -45,6 +47,19 @@ $(document).ready(function() {
 	}
 
 
+	$('a[href="#teacher_select"]').click(function(){
+		let cssLink = $('link[href*="index_student.css"]');
+		cssLink.replaceWith('<link href="index.css" type="text/css" rel="stylesheet">');
+		$('#user_student').hide();
+		$('#user_select').hide();
+ 	}); 
+
+ 	$('a[href="#student_select"]').click(function(){
+		$('#user_student').show();
+		$('#user_select').hide();
+ 	}); 
+// $('a[href="#student_select"]').prop('disabled', true);
+// $('#add_word').css("display", "none");
 
 if (window.matchMedia("(max-width: 640px)").matches) {
     $('a[href="#mobile_dropdown_class_outer"]').click(function(){
@@ -124,6 +139,8 @@ if (window.matchMedia("(max-width: 640px)").matches) {
   	$('#results').hide();
     $('#form_post').show();
     $('#no_results_message').hide();
+    $('#user_student').hide();
+		$('#user_teacher').hide();
  }); 
 
   $('a[href="#nav_year_all"]').click(function(){

@@ -6,8 +6,12 @@
     <title>UHS Dictionary</title>
 <!--     <link rel="stylesheet" href="float-grid.css" type="text/css" /> -->
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Slabo+27px|Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="index.css" type="text/css" />
-    <script src="https://use.fontawesome.com/083bde56bc.js"></script>
+    <link rel="stylesheet" href="index.css" id="teacher_styles" type="text/css" />
+    <link rel="stylesheet" href="index_student.css" id="student_styles" type="text/css" />
+    <script>
+      // document.getElementById('teacher_styles').disabled  = true;
+      // document.getElementById('student_styles').disabled = true;
+    </script>
   </head>
   <body>
     <header role="banner">
@@ -22,7 +26,7 @@
       <nav id="nav" role="navigation" class="nav_bar"> 
         <ul id="ul_outer" class="ul_outer">
 
-            <li class="li_outer col-3"><a href="#add_word" class="titles_nav">Add Word</a></li>
+            <li class="li_outer add_word" id="add_word"><a href="#add_word" class="titles_nav">Add Word</a></li>
 
             <li class="li_outer col-3"><a href="#mobile_dropdown_class_outer" class="titles_nav titles_nav_class" id="class_selected">Class</a>
               <ul class="ul_inner" id="mobile_dropdown_class_inner">
@@ -42,7 +46,7 @@
               </ul>
             </li>
 <!--             <form id="form_get"> -->
-            <li class="li_outer col-3" id="button_submit"><a href="#find_terms" class="titles_nav" id="search_text">Search</a>
+            <!-- <li class="li_outer" id="button_submit"><a href="#find_terms" class="titles_nav" id="search_text">Search</a> -->
 <!--             </form> -->
 
         </ul>
@@ -90,8 +94,14 @@
         </div>
       </div>
 
-
+<!-- onClick="window.location.reload();return false;" -->
       <h3 id="no_results_message" class="no_results_message">No words matching your request, please try again</h3>
+
+      <h3 id="user_select">Are you a <a href="#student_select"  class="student_select">student</a> or a <a href="#teacher_select" class="teacher_select">teacher</a>?</h3>
+
+      <h3 id="user_student" class="user_student">Find vocabulary by year and part.</h3>
+
+      <h3 id="user_teacher" class="user_teacher">Add vocabulary for your students, or prepare by reviewing vocab.</h3>
 
 
       <p id="year"></p>

@@ -19,7 +19,12 @@ h1{
   font-family: 'Slabo 27px', serif;
   z-index: 1;
 }
-
+.user_student, .user_teacher {
+  display: none;
+}
+.add_word {
+  display: none;
+}
 #no_results_message {
   display: none;
 }
@@ -38,7 +43,7 @@ h1{
 @media (max-width: 379px) { 
   .results, .frame_post_container {
     flex-direction: column;
-    margin-top: 190px;
+    margin-top: 126px;
   }
   .ul_outer, .nav_bar {
     flex-direction: column;
@@ -65,7 +70,7 @@ h1{
 
 @media (min-width:380px) and (max-width: 640px) { 
   .ul_outer {
-    padding-bottom: 131px;
+    padding-bottom: 67px;
   }
   .results {
     flex-direction: row;
@@ -109,7 +114,7 @@ h1{
     margin-bottom: -8px;
   }
   .li_outer{
-    width: 33.33%;
+    width: 50%;
   }
   .frame {
     width: 25%;
@@ -361,5 +366,5 @@ a, a:hover {
 }
 
 .student_select, .teacher_select {
-  color: #40798C;
+
 }
