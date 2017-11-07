@@ -8,10 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Slabo+27px|Roboto" rel="stylesheet">
     <link rel="stylesheet" href="index.css" id="teacher_styles" type="text/css" />
     <link rel="stylesheet" href="index_student.css" id="student_styles" type="text/css" />
-    <script>
-      // document.getElementById('teacher_styles').disabled  = true;
-      // document.getElementById('student_styles').disabled = true;
-    </script>
+
   </head>
   <body>
     <header role="banner">
@@ -43,6 +40,13 @@
                 <li class="li_inner"><a href="#nav_part_prefix" class="subtitles_nav_part subtitles_nav">Prefix</a></li>
                 <li class="li_inner"><a href="#nav_part_root" class="subtitles_nav_part subtitles_nav">Root</a></li>
                 <li class="li_inner"><a href="#nav_part_suffix" class="subtitles_nav_part subtitles_nav">Suffix</a></li>
+              </ul>
+            </li>
+
+            <li class="li_outer col-3"> <a href= "#mobile_dropdown_user_outer" class="titles_nav titles_nav_user" id="nav_user_selected">User</a>
+              <ul class="ul_inner" id="mobile_dropdown_user_inner">
+                <li class="li_inner"><a href="#nav_user_teacher" class="subtitles_nav_user subtitles_nav">Teacher</a></li>
+                <li class="li_inner"><a href="#nav_user_student" class="subtitles_nav_user subtitles_nav">Student</a></li>
               </ul>
             </li>
 <!--             <form id="form_get"> -->
@@ -94,18 +98,66 @@
         </div>
       </div>
 
-<!-- onClick="window.location.reload();return false;" -->
       <h3 id="no_results_message" class="no_results_message">No words matching your request, please try again</h3>
+<!-- onClick="window.location.reload();return false;" -->
+      <div class="instructions_container">
+        <div class="select_container" id="select_container">
+          <!-- <h3 id="no_results_message" class="no_results_message">No words matching your request, please try again</h3> -->
 
-      <h3 id="user_select">Are you a <a href="#student_select"  class="student_select">student</a> or a <a href="#teacher_select" class="teacher_select">teacher</a>?</h3>
+          <h3 id="user_select">Are you a <a href="#student_select"  class="student_select">student</a> or a <a href="#teacher_select" class="teacher_select">teacher</a>?</h3>
 
-      <h3 id="user_student" class="user_student">Find vocabulary by year and part.</h3>
+          <h3 id="user_student" class="user_student">Find vocabulary by year and part.</h3>
 
-      <h3 id="user_teacher" class="user_teacher">Add vocabulary for your students, or prepare by reviewing vocab.</h3>
+          <h3 id="user_teacher" class="user_teacher">Add vocabulary for your students, or prepare by reviewing vocab.</h3>
+        </div>
 
+        <div class="results_static" id="results_static">
+          <div class="frame">
+            <div class="card" id="card1">
+              <div class="card_title" id="title1">
+                <h3 class="word">bio (life)</h3>
+              </div>
+              <div class="card_content" id="content1">
+                <p class="definition" id="year">Year 3</p>
+                <p class="definition">Root</p>
+                <p class="definition">ພາສາ ລາວ</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="frame card_static_2">
+            <div class="card" id="card1">
+              <div class="card_title" id="title1">
+                <h3 class="word">encephal/o (brain)</h3>
+              </div>
+              <div class="card_content" id="content1">
+                <p class="definition" id="year">Year 3</p>
+                <p class="definition">Root</p>
+                <p class="definition">ພາສາ ລາວ</p>
+              </div>
+            </div>
+          </div>
+
+        
+          <div class="frame card_static_3">
+            <div class="card" id="card1">
+              <div class="card_title" id="title1">
+                <h3 class="word">-pathy (disease)</h3>
+              </div>
+              <div class="card_content" id="content1">
+                <p class="definition" id="year">Year 3</p>
+                <p class="definition">Suffix</p>
+                <p class="definition">ພາສາ ລາວ</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
 
       <p id="year"></p>
       <p id="part"></p>
+      <p id="user"></p>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="index.js"></script>

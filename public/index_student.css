@@ -20,7 +20,7 @@ h1{
   z-index: 1;
 }
 .user_student, .user_teacher {
-  display: none;
+/*  display: none;*/
 }
 .add_word {
   display: none;
@@ -32,7 +32,7 @@ h1{
   display: none;
 }
 
-.results, .ul_outer, .frame_post_container{
+.results, .ul_outer, .frame_post_container, .results_static{
   display: flex;
 }
 
@@ -44,6 +44,9 @@ h1{
   .results, .frame_post_container {
     flex-direction: column;
     margin-top: 126px;
+  }
+  .results_static {
+    flex-direction: column;
   }
   .ul_outer, .nav_bar {
     flex-direction: column;
@@ -65,6 +68,10 @@ h1{
   .ul_inner {
     display: none;
   }
+  .card_static_2, .card_static_3 {
+    display: none;
+  }
+
 
 }
 
@@ -72,7 +79,7 @@ h1{
   .ul_outer {
     padding-bottom: 67px;
   }
-  .results {
+  .results, .results_static {
     flex-direction: row;
     flex-wrap: wrap;
 /*    margin: auto;*/
@@ -98,11 +105,14 @@ h1{
   .frame_post {
     margin-top: 35px;
   }
+  .card_static_3 {
+    display: none;
+  }
 
 }
 
 @media (min-width: 641px) { 
-  .results {
+  .results, .results_static {
     flex-direction: row;
     flex-wrap: wrap;
     margin: auto;
@@ -278,7 +288,7 @@ h1{
 }
 
 
-.titles_nav_class, .titles_nav_part {
+.titles_nav_class, .titles_nav_part, .titles_nav_user {
   cursor: default;
 }
 
@@ -322,12 +332,12 @@ a, a:hover {
   display: none;
 }
 
-.subtitles_nav_year, .subtitles_nav_part {
+.subtitles_nav_year, .subtitles_nav_part, .subtitles_nav_user {
   font-size: 20px; 
   border-top: 1px solid #843c3c;
   padding: 10px; 
 }
-.subtitles_nav_year:hover, .subtitles_nav_part:hover {
+.subtitles_nav_year:hover, .subtitles_nav_part:hover, .subtitles_nav_user:hover {
   background-color: #843c3c;
   z-index: 3000;
 /*  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
@@ -344,7 +354,7 @@ a, a:hover {
 
 #submit {
   height: 100%;
-  width: 100%;
+  width: 100%;t
   color: #FFF1E7;
   background-color: #A64C4C;
 }
@@ -357,14 +367,44 @@ a, a:hover {
   opacity: 0;
 }
 
-.no_results_message, h3 {
-  max-width: 1000px;
-  margin: auto;
-  padding-top: 20px;
+.no_results_message {
+/*  max-width: 1000px;*/
+/*  margin: auto;*/
+/*  padding-top: 20px;*/
   font-family: 'Roboto', sans-serif;
   color: #505050;
 }
 
 .student_select, .teacher_select {
-
+  color: #40798C;
 }
+
+.user_select {
+  margin: auto;
+}
+
+.select_container {
+  padding-top: 1px;
+  background-color: #BBCBCB;
+  border: 2px solid #837A75;
+  color: #1C2321;
+  text-align: center;
+  margin-bottom: 11px;
+}
+  
+
+.instructions_container {
+  max-width: 1000px;
+  padding-top: 20px;
+  margin: auto;
+}
+
+/*#FFF1E7 offwhite/red */
+/*#A64C4C deep red */
+/*#27AE98 teal/mint*/
+/*#2FA4B6 boardwalk blue*/
+/*#BAD9DB greyish blue*/
+/*#843c3c deeper red*/
+/*#EFE6DD eggshell*/
+/*#BBCBCB pastel blue*/
+/*#837A75 sonic silver*/

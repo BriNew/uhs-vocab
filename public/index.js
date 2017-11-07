@@ -5,8 +5,13 @@ $(document).ready(function() {
 
 	function getTerms() {
 		let terms;
-		$('#user_student').hide();
-		$('#user_teacher').hide();
+		$('#results').show();
+		// $('#user_student').hide();
+		// $('#user_teacher').hide();
+		// $('#user_select').hide();
+		$('#results_static').hide();
+		$('#select_container').hide();
+
 		// $('#mobile_dropdown_class_inner').show();
 		// $('#mobile_dropdown_part_inner').show();
 		$.getJSON("/terms", {year: year, type_select: type_select},
@@ -47,17 +52,67 @@ $(document).ready(function() {
 	}
 
 
+	$('a[href="#nav_user_teacher"]').click(function(){
+		let cssLink = $('link[href*="index_student.css"]');
+		cssLink.replaceWith('<link href="index.css" type="text/css" rel="stylesheet">');
+		$('#select_container').show();
+		$('#results_static').show();
+		$('#results').hide();
+		$('#user_student').hide();
+		$('#user_select').hide();
+		$('#user_teacher').show();
+		$('#form_post').hide();
+ 	}); 
+
+ 	$('a[href="#nav_user_student"]').click(function(){
+ 		let cssLink = $('link[href*="index.css"]');
+		cssLink.replaceWith('<link href="index_student.css" type="text/css" rel="stylesheet">');
+ 		$('#select_container').show();
+		$('#results_static').show();
+		$('#results').hide();
+		$('#user_student').show();
+		$('#user_select').hide();
+		$('#user_teacher').hide();
+		$('#form_post').hide();
+ 	}); 
+
 	$('a[href="#teacher_select"]').click(function(){
 		let cssLink = $('link[href*="index_student.css"]');
 		cssLink.replaceWith('<link href="index.css" type="text/css" rel="stylesheet">');
 		$('#user_student').hide();
 		$('#user_select').hide();
+		$('#user_teacher').show();
  	}); 
 
  	$('a[href="#student_select"]').click(function(){
 		$('#user_student').show();
 		$('#user_select').hide();
  	}); 
+
+ 	$('a[href="#nav_user_teacher"]').click(function(){
+ 		let user;
+    $('#user').val('Teacher');
+    user = $('#user').val();
+    // $('#mobile_dropdown_class_inner').hide();
+    $('#no_results_message').hide();
+    $('#nav_user_selected').text('User: ' + user);
+    // getTerms();
+    console.log(user);
+ }); 
+
+ 	$('a[href="#nav_user_student"]').click(function(){
+ 		let user;
+    $('#user').val('Student');
+    user = $('#user').val();
+    // $('#mobile_dropdown_class_inner').hide();
+    $('#no_results_message').hide();
+    $('#nav_user_selected').text('User: ' + user);
+    // getTerms();
+    console.log(user);
+ });
+
+
+
 // $('a[href="#student_select"]').prop('disabled', true);
 // $('#add_word').css("display", "none");
 
@@ -141,6 +196,8 @@ if (window.matchMedia("(max-width: 640px)").matches) {
     $('#no_results_message').hide();
     $('#user_student').hide();
 		$('#user_teacher').hide();
+		$('#results_static').hide();
+		$('#select_container').hide();
  }); 
 
   $('a[href="#nav_year_all"]').click(function(){
@@ -245,6 +302,8 @@ if (window.matchMedia("(max-width: 640px)").matches) {
 	  $('#class_selected').text('Class: All');
 	  $('#part_selected').text('Part: All');
 	  $('#form_post').hide();
+	  $('#results_static').hide();
+		$('#select_container').hide();
 
 
 	  englishInput = $('#english_input').val();
@@ -322,3 +381,5 @@ if (window.matchMedia("(max-width: 640px)").matches) {
  // }); 
 
 });
+
+
