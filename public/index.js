@@ -6,10 +6,11 @@ $(document).ready(function() {
 	function getTerms() {
 		let terms;
 		$('#results').show();
-		// $('#user_student').hide();
-		// $('#user_teacher').hide();
-		// $('#user_select').hide();
+		$('#user_student').hide();
+		$('#user_teacher').hide();
+		$('#user_select').hide();
 		$('#results_static').hide();
+		$('#form_post').hide();
 		$('#select_container').hide();
 
 		// $('#mobile_dropdown_class_inner').show();
@@ -55,6 +56,8 @@ $(document).ready(function() {
 	$('a[href="#nav_user_teacher"]').click(function(){
 		let cssLink = $('link[href*="index_student.css"]');
 		cssLink.replaceWith('<link href="index.css" type="text/css" rel="stylesheet">');
+		$('#part_selected').text('Part');
+		$('#class_selected').text('Class');
 		$('#select_container').show();
 		$('#results_static').show();
 		$('#results').hide();
@@ -67,6 +70,8 @@ $(document).ready(function() {
  	$('a[href="#nav_user_student"]').click(function(){
  		let cssLink = $('link[href*="index.css"]');
 		cssLink.replaceWith('<link href="index_student.css" type="text/css" rel="stylesheet">');
+		$('#part_selected').text('Part');
+		$('#class_selected').text('Class');
  		$('#select_container').show();
 		$('#results_static').show();
 		$('#results').hide();
@@ -193,10 +198,11 @@ if (window.matchMedia("(max-width: 640px)").matches) {
   $('a[href="#add_word"]').click(function(){
   	$('#results').hide();
     $('#form_post').show();
-    $('#no_results_message').hide();
+    // $('#no_results_message').hide();
     $('#user_student').hide();
 		$('#user_teacher').hide();
 		$('#results_static').hide();
+		// $('#instructions_container').hide();
 		$('#select_container').hide();
  }); 
 

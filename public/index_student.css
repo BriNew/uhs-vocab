@@ -368,9 +368,9 @@ a, a:hover {
 }
 
 .no_results_message {
-/*  max-width: 1000px;*/
-/*  margin: auto;*/
-/*  padding-top: 20px;*/
+  max-width: 1000px;
+  margin: auto;
+  padding-top: 20px;
   font-family: 'Roboto', sans-serif;
   color: #505050;
 }
@@ -398,6 +398,11 @@ a, a:hover {
   padding-top: 20px;
   margin: auto;
 }
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+}
+
 
 /*#FFF1E7 offwhite/red */
 /*#A64C4C deep red */

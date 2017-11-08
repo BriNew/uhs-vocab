@@ -115,7 +115,7 @@ h1{
   .results, .results_static {
     flex-direction: row;
     flex-wrap: wrap;
-    margin: auto;
+/*    margin: auto;*/
   }
   .ul_outer, .nav_bar {
     flex-direction: row;
@@ -138,10 +138,7 @@ h1{
   .frame_post_container {
     flex-direction: row;
     flex-wrap: wrap;
-    margin: auto;
-  }
-  .frame_post {
-
+/*    margin: auto;*/
   }
 
   .card{
@@ -368,9 +365,9 @@ a, a:hover {
 }
 
 .no_results_message {
-/*  max-width: 1000px;*/
-/*  margin: auto;*/
-/*  padding-top: 20px;*/
+  max-width: 1000px;
+  margin: auto;
+  padding-top: 20px;
   font-family: 'Roboto', sans-serif;
   color: #505050;
 }
@@ -397,6 +394,10 @@ a, a:hover {
   max-width: 1000px;
   padding-top: 20px;
   margin: auto;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
 }
 
 /*#FFF1E7 offwhite/red */
