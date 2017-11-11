@@ -1,9 +1,9 @@
 $(document).ready(function() {
 	let year, type_select;
-	let englishInput, yearInput, typeSelectInput, laoInput;
+	let englishInput, yearInput, typeSelectInput, laoInput, secret, pageNum;
 	
 
-	function getTerms() {
+	function getTerms(page) {
 		let terms;
 		$('#results').show();
 		$('#user_student').hide();
@@ -15,9 +15,14 @@ $(document).ready(function() {
 
 		// $('#mobile_dropdown_class_inner').show();
 		// $('#mobile_dropdown_part_inner').show();
-		$.getJSON("/terms", {year: year, type_select: type_select},
+		$.getJSON("/terms", {year: year, type_select: type_select, page: page},
 			function(data) {
 				console.log(data);
+				// pageNum = page;
+				// console.log('you are looking at page', pageNum);
+				
+
+
 			  terms = data.terms.map((term, index) => showTerms(term));
   			$('#results').html(terms);
   			console.log(terms.length);
@@ -29,6 +34,52 @@ $(document).ready(function() {
 
 			
 	};	
+
+	$('#next_page_button').click(function(){
+		pageIncrement();
+		getTerms(pageNum);
+	})
+
+	$('#previous_page_button').click(function(){
+		pageDecrement();
+		getTerms(pageNum);
+	})
+
+	pageNum = 0;
+	
+	function pageIncrement() {
+		pageNum += 1;
+		console.log('you have clicked this many times:' + pageNum);
+
+	}
+
+	function pageDecrement() {
+		pageNum -=1;
+		if(pageNum < 1){
+			pageNum = 1;
+		}
+	}
+
+
+	$('a[href="#nav_year_3"]').click(function(){
+	    $('#year').val(3);
+	    year = $('#year').val();
+	    // $('#mobile_dropdown_class_inner').hide();
+	    $('#no_results_message').hide();
+	    $('#class_selected').text('Class: Year ' + year);
+	    pageIncrement();
+	    
+
+	    
+
+	    getTerms(pageNum);
+	    console.log();
+ }); 
+
+
+
+	
+
 
 
 
@@ -134,6 +185,12 @@ if (window.matchMedia("(max-width: 640px)").matches) {
 }; 
 
 if (window.matchMedia("(max-width: 640px)").matches) {
+    $('a[href="#mobile_dropdown_user_outer"]').click(function(){
+  		$('#mobile_dropdown_user_inner').toggle();
+ }); 
+}; 
+
+if (window.matchMedia("(max-width: 640px)").matches) {
     $('a[href="#nav_part_all"]').click(function(){
   		$('#mobile_dropdown_part_inner').toggle();
  }); 
@@ -180,6 +237,22 @@ if (window.matchMedia("(max-width: 640px)").matches) {
   		$('#mobile_dropdown_class_inner').toggle();
  }); 
 }; 
+
+if (window.matchMedia("(max-width: 640px)").matches) {
+    $('a[href="#nav_user_teacher"]').click(function(){
+  		$('#mobile_dropdown_user_inner').toggle();
+ }); 
+}; 
+
+if (window.matchMedia("(max-width: 640px)").matches) {
+    $('a[href="#nav_user_student"]').click(function(){
+  		$('#mobile_dropdown_user_inner').toggle();
+ }); 
+}; 
+
+
+
+
  
 
 
@@ -198,7 +271,7 @@ if (window.matchMedia("(max-width: 640px)").matches) {
   $('a[href="#add_word"]').click(function(){
   	$('#results').hide();
     $('#form_post').show();
-    // $('#no_results_message').hide();
+    $('#no_results_message').hide();
     $('#user_student').hide();
 		$('#user_teacher').hide();
 		$('#results_static').hide();
@@ -242,15 +315,15 @@ if (window.matchMedia("(max-width: 640px)").matches) {
     console.log(year);
  }); 
  
-  $('a[href="#nav_year_3"]').click(function(){
-    $('#year').val(3);
-    year = $('#year').val();
-    // $('#mobile_dropdown_class_inner').hide();
-    $('#no_results_message').hide();
-    $('#class_selected').text('Class: Year ' + year);
-    getTerms();
-    console.log(year);
- }); 
+ //  $('a[href="#nav_year_3"]').click(function(){
+ //    $('#year').val(3);
+ //    year = $('#year').val();
+ //    // $('#mobile_dropdown_class_inner').hide();
+ //    $('#no_results_message').hide();
+ //    $('#class_selected').text('Class: Year ' + year);
+ //    getTerms(3);
+ //    console.log(year);
+ // }); 
 
   $('a[href="#nav_part_all"]').click(function(){
   	$("form_all_parts").submit();
@@ -328,11 +401,16 @@ if (window.matchMedia("(max-width: 640px)").matches) {
 	  // $('#lao_new').text(laoInput);
 	  console.log(laoInput);
 
+	  secret = $('#secret').val();
+	  // $('#lao_new').text(laoInput);
+	  console.log(secret);
+
 	  let payload = {
 	  		english: englishInput, 
 	  		year: yearInput, 
 	  		type_select: typeSelectInput, 
-	  		lao: laoInput
+	  		lao: laoInput,
+	  		secret: secret
 	  	};
 	  console.log(payload);
 	  $.ajax({
@@ -341,14 +419,36 @@ if (window.matchMedia("(max-width: 640px)").matches) {
 	  	data: JSON.stringify(payload),
 	  	dataType: "json",
 	  	contentType: "application/json",
-	  	success: function(res){
-	  		console.log("Hey it worked");
-	  		console.log(res);
-	  	}
+	  	statusCode: {
+		    401: function() {
+		    	$('#results').hide();
+
+		       // alert( 'The provided secret is not correct' );
+
+		       	$('#no_results_message').text('The provided secret is not correct');
+		       	$('#no_results_message').show();
+
+		    }
+		  }
+	  	// success: function(res){
+
+	  	// 	console.log("Hey it worked");
+	  	// 	console.log(res);
+	  	// }
+	  
+
 	  })
 	   getTerms();
 	   $('#results').show();
 	});
+
+// 	$.ajax({
+//   statusCode: {
+//     404: function() {
+//        alert( "page not found" );
+//     }
+//   }
+// });
 
  //  $('#find_terms').submit(function(event) {
  //    event.preventDefault();

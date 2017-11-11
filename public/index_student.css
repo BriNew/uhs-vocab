@@ -52,7 +52,7 @@ h1{
     flex-direction: column;
   }
   .nav_bar {
-    margin-bottom: -60px;
+    margin-bottom: 0px;
   }
   .frame {
     width: 93%;
@@ -71,6 +71,9 @@ h1{
   .card_static_2, .card_static_3 {
     display: none;
   }
+  .select_container {
+    margin-top: -16px;
+  }
 
 
 }
@@ -88,7 +91,7 @@ h1{
     flex-direction: column;
   }
   .nav_bar {
-    margin-bottom: -10px;
+    margin-bottom: 62px;
   }
 
   .frame {
@@ -107,6 +110,9 @@ h1{
   }
   .card_static_3 {
     display: none;
+  }
+  .select_container {
+    margin-top: -19px;
   }
 
 }

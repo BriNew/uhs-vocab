@@ -26,23 +26,10 @@ app.get('/terms/:id', (req, res) => {//returning all
 		});
 });
 
-// app.get('/terms', (req, res) => {
-// 	Vocab
-// 		.find()
-// 		.then(terms => {
-// 			res.json({
-// 				terms: terms.map(
-// 					(term) => term.apiRepr())
-// 			});
-// 		})
-// 		.catch(
-// 			err => {
-// 				console.error(err);
-// 				res.status(500).json({message: 'Internal server error'})
-// 			})
-// });
 
 app.get('/terms', (req, res) => {
+	console.log('page is', req.query.page);
+	const pageNumber = req.query.page || 1;
 	const filters = {};
 	const queryableFields = ['year', 'type_select'];
 	queryableFields.forEach(field => {
@@ -51,26 +38,37 @@ app.get('/terms', (req, res) => {
 		}
 	});
 	Vocab
-		.find(filters)
-		.then(terms => {
-			res.json({
-				terms: terms.map(
+		.paginate(filters, { page: pageNumber, limit: 6}, function(error, result) {
+		console.log(result);
+		res.json({
+				terms: result.docs.map(
 					(term) => term.apiRepr())
 			});
-		})
+	})
+	// Vocab
+	// 	.find(filters)
+		// .paginate({}, { page: 3, limit: 10 })
+		// .find().limit(10)
+		// .then(terms => {
+		// 	res.json({
+		// 		terms: terms.map(
+		// 			(term) => term.apiRepr())
+		// 	});
+		// })
 		// .find(filters)
 		// .then(terms => res.json( 
 		// 	terms.map(term => term.apiRepr())
 		// ))
-		.catch(err => {
-			console.log(err);
-			res.status(500).json({message: 'Internal server error'})
-		});
+		// .catch(err => {
+		// 	console.log(err);
+		// 	res.status(500).json({message: 'Internal server error'})
+		// });
 });
 
 app.post('/terms', (req, res) => {
+	const authorizationKey = "someString";
 	console.log(req.body);
-	const requiredFields = ['year', 'english', 'lao'];
+	const requiredFields = ['year', 'english', 'lao', 'secret'];
 	for (let i=0; i<requiredFields.length; i++) {
 		const field = requiredFields[i];
 		if (!(field in req.body)) {
@@ -79,6 +77,10 @@ app.post('/terms', (req, res) => {
 			return res.status(400).send(message);
 		}
 	}
+	if (req.body.secret !== authorizationKey) {
+		return res.status(401).send('The provided secret is not correct');
+	}
+
 	Vocab
 		.create({
 			year: req.body.year,
@@ -176,3 +178,5 @@ if (require.main === module) {
 module.exports = {app, runServer, closeServer};
 // app.use(express.static('public'));
 // app.listen(process.env.PORT || 8080);
+
+

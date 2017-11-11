@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
+const mongoosePaginate = require('mongoose-paginate');
 
 const vocabSchema = mongoose.Schema({
-  // id:{type: String, required: true},
   year:{type: String, required: true},//change to Number?
   type_select:{type: String, required: true},//change to type_select?
   english:{type: String, required: true, unique: true},
@@ -10,6 +10,7 @@ const vocabSchema = mongoose.Schema({
 });
 
 vocabSchema.plugin(uniqueValidator);
+vocabSchema.plugin(mongoosePaginate);
 
 vocabSchema.methods.apiRepr = function() {
   return {
@@ -23,6 +24,9 @@ vocabSchema.methods.apiRepr = function() {
 
 const Vocab = mongoose.model('Terms', vocabSchema);
 module.exports = {Vocab};
+
+
+
 
 
 

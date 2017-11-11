@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Slabo+27px|Roboto" rel="stylesheet">
     <link rel="stylesheet" href="index.css" id="teacher_styles" type="text/css" />
     <link rel="stylesheet" href="index_student.css" id="student_styles" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="index.js"></script>
 
   </head>
   <body>
@@ -71,6 +73,7 @@
                   <p class="definition" id="year"><input type="text" id="year_input" class="text-input" placeholder="year" required=></p>
                   <p class="definition"><input type="text" id="type_select_input" class="text-input" placeholder="prefix, root, or suffix"></p>
                   <p class="definition"><input type="text" id="lao_input" class="text-input" placeholder="lao" required></p>
+                  <p class="definition"><input type="text" id="secret" class="text-input" placeholder="secret" required></p>
                   <button id="submit_post" class="submit_post">submit</button>
                 </div>
               </div>
@@ -97,7 +100,6 @@
 
         </div>
       </div>
-
           <h3 id="no_results_message" class="no_results_message">No words matching your request, please try again</h3>
 
 
@@ -160,9 +162,12 @@
       <p id="year"></p>
       <p id="part"></p>
       <p id="user"></p>
+      <p id="page"></p>
+      <button id="next_page_button" class="next_page_button" type="button">next page</button>
+      <button id="previous_page_button" class="previous_page_button" type="button">previous page</button>
     </main>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="index.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="index.js"></script> -->
   </body>
 </html>
 
