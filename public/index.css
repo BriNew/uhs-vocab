@@ -19,7 +19,7 @@ h1{
   font-family: 'Slabo 27px', serif;
   z-index: 1;
 }
-.user_student, .user_teacher {
+.user_student, .user_teacher, .page_button_container {
   display: none;
 }
 .add_word {
@@ -156,6 +156,15 @@ h1{
 }
 }
 
+.frame_post {
+  margin-top: 40px;
+  padding-bottom: 75px;
+}
+
+.card_post {
+  border: 2px solid #837A75;
+  padding-bottom: 11px;
+}
 
 .banner_title {
   padding-left: 7%;
@@ -401,9 +410,43 @@ a, a:hover {
   margin: auto;
 }
 
-h3 {
+h3, .page {
   font-family: 'Roboto', sans-serif;
 }
+
+.page_button_container {
+  max-width: 1000px;
+  margin: auto;
+  margin-top: -10px;
+  text-align: center;
+}
+
+.next_page_button, .previous_page_button, .page {
+  display: inline-block;
+}
+
+.next_page_button, .previous_page_button {
+  color: #1C2321;
+}
+
+.next_page_button {
+  margin-right: 20px;
+}
+
+.fa-arrow-left:before {
+  padding-right: 10px;
+}
+
+.fa-arrow-right:before {
+  padding-left: 10px;
+}
+
+.page {
+  font-size: 18px;
+
+
+}
+
 
 /*#FFF1E7 offwhite/red */
 /*#A64C4C deep red */

@@ -6,8 +6,10 @@
     <title>UHS Dictionary</title>
 <!--     <link rel="stylesheet" href="float-grid.css" type="text/css" /> -->
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Slabo+27px|Roboto" rel="stylesheet">
+    <script src="https://use.fontawesome.com/7014a12ac1.js"></script>
     <link rel="stylesheet" href="index.css" id="teacher_styles" type="text/css" />
     <link rel="stylesheet" href="index_student.css" id="student_styles" type="text/css" />
+    <!-- <script src="https://use.fontawesome.com/7014a12ac1.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="index.js"></script>
 
@@ -65,7 +67,7 @@
       <form id="form_post">
           <div class="frame_post_container">
             <div class="frame frame_post">
-              <div class="card" id="card1">
+              <div class="card_post" id="card1">
                 <div class="card_title" id="title1">
                   <h3 class="word"><input type="text" id="english_input" class="text-input" placeholder="english" required></h3>
                 </div>
@@ -162,9 +164,16 @@
       <p id="year"></p>
       <p id="part"></p>
       <p id="user"></p>
-      <p id="page"></p>
-      <button id="next_page_button" class="next_page_button" type="button">next page</button>
-      <button id="previous_page_button" class="previous_page_button" type="button">previous page</button>
+
+      <div class="page_button_container" id="page_button_container">
+        <a class="previous_page_button" href="#previous_page_button"><i class="fa fa-arrow-left fa-lg" aria-hidden="true"></i></a>
+<!--         <button id="previous_page_button" class="previous_page_button" type="button">previous page</button> -->
+        <p id="page" class="page">1</p>
+        <a class="next_page_button" href="#next_page_button"><i class="fa fa-arrow-right fa-lg" aria-hidden="true"></i></a>
+<!--         <button id="next_page_button" class="next_page_button" type="button">next page</button> -->
+      </div>  
+
+
     </main>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="index.js"></script> -->
