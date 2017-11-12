@@ -1,16 +1,4 @@
-/*#FFF1E7 offwhite/red */
-/*#A64C4C deep red */
-/*#27AE98 teal/mint*/
-/*#2FA4B6 boardwalk blue*/
-/*#BAD9DB greyish blue*/
-/*#843c3c deeper red*/
-/*#EFE6DD eggshell*/
-/*#BBCBCB pastel blue*/
-/*#837A75 sonic silver*/
 
-/*html{
-  background-color: white;
-}*/
 h1{
   font-family: 'Libre Baskerville', serif;
 
@@ -25,7 +13,7 @@ h1{
 .add_word {
   display: none;
 }
-#no_results_message {
+#no_results_message, .page_button_container {
   display: none;
 }
 #form_post{
@@ -167,10 +155,6 @@ h1{
 
 
 .li_outer {
-/*  border: 1px solid #843c3c; */
-/*  width: 25%;*/
-/*  height: 100%;*/
-/*  float: left;*/
   background-color: #A64C4C;
   z-index: 1;
 }
@@ -189,10 +173,6 @@ h1{
   margin: auto;
 }
 
-/*.banner_container {
-  background-color: #843c3c;
-}*/
-
 .banner {
   color: #EFE6DD;
   max-width: 1000px;
@@ -205,19 +185,8 @@ h1{
   max-width: 1000px;
 }
 
-/*#FFF1E7 offwhite/red */
-/*#9D2323 deep red */
-/*#27AE98 teal/mint*/
-/*#2FA4B6 boardwalk blue*/
-/*#BAD9DB greyish blue*/
-/*#843c3c deeper red*/
-
 .frame {
   background-color: #FFF1E7;
-/*  padding: 10px;
-  padding-bottom: 30px;
-  margin-top: 20px;*/
-
 }
 
 .card {
@@ -235,11 +204,7 @@ h1{
 }
 
 .card_content {
-/*  padding-top: 1px;
-  padding-bottom: 200px;*/
   background-color: #FFF1E7;
-/*  max-height: 200px;*/
-
 }
 
 .word, .definition {
@@ -346,7 +311,6 @@ a, a:hover {
 .subtitles_nav_year:hover, .subtitles_nav_part:hover, .subtitles_nav_user:hover {
   background-color: #843c3c;
   z-index: 3000;
-/*  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
 }
 
 #button_submit:hover {
@@ -405,17 +369,40 @@ a, a:hover {
   margin: auto;
 }
 
-h3 {
+h3, .page {
   font-family: 'Roboto', sans-serif;
 }
 
 
-/*#FFF1E7 offwhite/red */
-/*#A64C4C deep red */
-/*#27AE98 teal/mint*/
-/*#2FA4B6 boardwalk blue*/
-/*#BAD9DB greyish blue*/
-/*#843c3c deeper red*/
-/*#EFE6DD eggshell*/
-/*#BBCBCB pastel blue*/
-/*#837A75 sonic silver*/
+.page_button_container {
+  max-width: 1000px;
+  margin: auto;
+  margin-top: -10px;
+  text-align: center;
+}
+
+.next_page_button, .previous_page_button, .page {
+  display: inline-block;
+
+}
+
+.next_page_button, .previous_page_button {
+  color: #1C2321;
+}
+
+.next_page_button {
+  margin-right: 20px;
+}
+
+.fa-arrow-left:before {
+  padding-right: 10px;
+}
+
+.fa-arrow-right:before {
+  padding-left: 10px;
+}
+
+.page {
+  font-size: 18px;
+
+}
