@@ -131,6 +131,7 @@ h1{
   .frame_post_container {
     flex-direction: row;
     flex-wrap: wrap;
+    margin: auto;
   }
 
   .card{
@@ -147,6 +148,7 @@ h1{
 .frame_post {
   margin-top: 40px;
   padding-bottom: 75px;
+/*  margin: auto;*/
 }
 
 .card_post {
