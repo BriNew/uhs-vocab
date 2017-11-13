@@ -86,7 +86,7 @@ $(document).ready(function() {
 		$('#form_post').hide();
 		$('#no_results_message').hide();
     $('#page_button_container').hide();
-		$('#html').delay(1).show(0);
+		$('#html').delay(800).show(0);
 	};
 
 	$('a[href="#nav_user_teacher"]').click(function(){
@@ -145,7 +145,7 @@ $(document).ready(function() {
 	 	}); 
     $('a[href="#nav_part_root"]').click(function(){
   		$('#mobile_dropdown_part_inner').toggle();
-		 }); 
+	 	}); 
     $('a[href="#nav_part_suffix"]').click(function(){
   		$('#mobile_dropdown_part_inner').toggle();
 	 	}); 
@@ -178,7 +178,7 @@ $(document).ready(function() {
 		$('#results_static').hide();
 		$('#select_container').hide();
 		$('#page_button_container').hide();
- }); 
+  }); 
 
   function displayYear(yearSelected) {
   	$('#year').val(yearSelected);
@@ -192,7 +192,7 @@ $(document).ready(function() {
     $('#class_selected').text('Class: All');
     pageIncrement();
     getTerms(pageNum);
- }); 
+  }); 
 
   $('a[href="#nav_year_1"]').click(function(){
   	pageNum = 0;
@@ -200,7 +200,7 @@ $(document).ready(function() {
     $('#class_selected').text('Class: Year ' + year);
     pageIncrement();
     getTerms(pageNum);
- }); 
+  }); 
  
   $('a[href="#nav_year_2"]').click(function(){
   	pageNum = 0;
@@ -208,7 +208,7 @@ $(document).ready(function() {
     $('#class_selected').text('Class: Year ' + year);
     pageIncrement();
     getTerms(pageNum);
- }); 
+  }); 
 
   $('a[href="#nav_year_3"]').click(function(){
 		pageNum = 0;
@@ -216,21 +216,21 @@ $(document).ready(function() {
 	  $('#class_selected').text('Class: Year ' + year);
 	  pageIncrement();
 	  getTerms(pageNum);
- }); 
+  }); 
 
   function displayPart(partSelected) {
   	$('#part').val(partSelected);
   	type_select = $('#part').val();
   };
 
- $('a[href="#nav_part_all"]').click(function(){
+  $('a[href="#nav_part_all"]').click(function(){
   	pageNum = 0;
   	$("form_all_parts").submit();
     displayPart(null);
     $('#part_selected').text('Part: All');
     pageIncrement();
     getTerms(pageNum);
- }); 
+  }); 
 
 	$('a[href="#nav_part_prefix"]').click(function(){
 		pageNum = 0;
@@ -238,7 +238,7 @@ $(document).ready(function() {
     $('#part_selected').text('Part: ' + type_select);
     pageIncrement();
     getTerms(pageNum);
- }); 
+  }); 
  
 	$('a[href="#nav_part_root"]').click(function(){
 		pageNum = 0;
@@ -246,7 +246,7 @@ $(document).ready(function() {
     $('#part_selected').text('Part: ' + type_select);
     pageIncrement();
     getTerms(pageNum);
- }); 
+  }); 
  
   $('a[href="#nav_part_suffix"]').click(function(){
   	pageNum = 0;
@@ -254,7 +254,7 @@ $(document).ready(function() {
     $('#part_selected').text('Part: ' + type_select);
     pageIncrement();
     getTerms(pageNum);
- }); 
+  }); 
 
 	$('#form_post').submit(event => {
 	  event.preventDefault();

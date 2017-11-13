@@ -81,6 +81,7 @@ h1 {
 
   .card {
     height: 100%;
+
   }
 
   .frame_post {
@@ -118,7 +119,7 @@ h1 {
   .frame {
     width: 25%;
     height: 200px;
-    margin: auto;
+    margin: 0 auto;
     padding: 10px;
     padding-bottom: 33px;
     margin-top: 20px;
@@ -380,3 +381,4 @@ h3, .page {
   font-size: 18px;
 
 }
+
