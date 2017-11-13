@@ -86,7 +86,7 @@ $(document).ready(function() {
 		$('#form_post').hide();
 		$('#no_results_message').hide();
     $('#page_button_container').hide();
-		$('#html').delay(75).show(0);
+		$('#html').delay(90).show(0);
 	};
 
 	$('a[href="#nav_user_teacher"]').click(function(){
