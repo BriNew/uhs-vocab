@@ -1,5 +1,6 @@
-### uhs-vocab-app - a project that brought together everything I had been learning about node. 
-I teach medical English at the University of Health Sciences in Vientiane, Laos. There is a lack of uniformity
+### uhs-vocab-app
+
+ສະບາຍດີ, I teach medical English at the University of Health Sciences in Vientiane, Laos. There is a lack of uniformity
 in English to Lao dictionaries, physical or digital. These dictionaries generally do not include technical 
 terminology. This problem led to confusion as the students would be consulting different dictionaries in and 
 out of class. The creation of this app goes side by side with the creation of a new curriculum for the English 
@@ -8,9 +9,32 @@ terminology they need to efficiently study.
 
 ![image](https://user-images.githubusercontent.com/24151430/32761036-0ba7ed98-c8a6-11e7-86a8-410877535a96.png)
 
+###Summary
+The app is meant for students of the English program and their teachers. Students can access vocabulary they 
+are responsible for by class(year 1, 2, or 3) and part(prefix, root, suffix). The teachers can add words as
+they see fit. Currently, there are five teachers in the English program that will be given the "secret" required
+to add words to the app. The database will be updated as the curriculum is updated, and any placeholder text will
+be replaced. The app will eventually be primarily Lao in language.
+
+###Technology Used
+ - HTML5
+ - CSS3
+ - JavaScript
+ - Jquery
+
+### Back-End
+
+ - Node
+ - Express
+ - MongoDB
+ - Mongoose
+
+### Testing and Deployment
+ - Mocha
+ - Chai
+ - Travis CI
+ - Heroku
+ - mLab
 
 
-### nyt-search-api allows you to search the New York Time's archive, dating from September 1851 to present.
-The results are filtered by having the user choose a month, year, and a U.S. state.
 
-### HTML/CSS/JavaScript/Jquery/NodeJS/MongoDB was used for this app.
