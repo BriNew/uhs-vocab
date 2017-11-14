@@ -9,14 +9,14 @@ terminology they need to efficiently study.
 
 ![image](https://user-images.githubusercontent.com/24151430/32761036-0ba7ed98-c8a6-11e7-86a8-410877535a96.png)
 
-###Summary
+### Summary
 The app is meant for students of the English program and their teachers. Students can access vocabulary they 
 are responsible for by class(year 1, 2, or 3) and part(prefix, root, suffix). The teachers can add words as
 they see fit. Currently, there are five teachers in the English program that will be given the "secret" required
 to add words to the app. The database will be updated as the curriculum is updated, and any placeholder text will
 be replaced. The app will eventually be primarily Lao in language.
 
-###Technology Used
+### Technology Used
  - HTML5
  - CSS3
  - JavaScript
