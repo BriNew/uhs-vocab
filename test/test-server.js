@@ -35,7 +35,7 @@ describe('tests', function() {
 
 	describe('POST endpoint', function() {
 		it('should add term on POST', function() {
-		const newTerm = {year: "1", type_select: "root", english: "cardio", lao: "ພາສາ ລາວ" };
+		const newTerm = {year: "1", type_select: "root", english: "cardio", lao: "ພາສາ ລາວ", secret: "someString"};
 		return chai.request(app)
 			.post('/terms')
 			.send(newTerm)
@@ -56,7 +56,7 @@ describe('tests', function() {
 
 		it('should update term on PUT', function() {
 
-			const newTerm = {year: 1, type_select: "root", english: "cardio", lao: "ພາສາ ລາວ" };
+			const newTerm = {year: 1, type_select: "root", english: "cardio", lao: "ພາສາ ລາວ", secret: "someString" };
 			return chai.request(app)
 				.post('/terms')
 				.send(newTerm)
@@ -76,7 +76,7 @@ describe('tests', function() {
 
 	describe('DELETE endpoint', function() {
 		it('should delete terms on DELETE', function() {
-			const newTerm = {year: 1, type_select: "root", english: "cardio", lao: "ພາສາ ລາວ" };
+			const newTerm = {year: 1, type_select: "root", english: "cardio", lao: "ພາສາ ລາວ", secret: "someString" };
 			return chai.request(app)
 				.post('/terms')
 				.send(newTerm)

@@ -15,8 +15,7 @@ app.get('/', (req, res) => {
 	res.sendFile(__dirname+'/public/index.html')
 })
 
-
-app.get('/terms/:id', (req, res) => {//returning all 
+app.get('/terms/:id', (req, res) => {
 	Vocab
 		.findById(req.params.id)
 		.then(term => res.json(term.apiRepr()))
@@ -25,7 +24,6 @@ app.get('/terms/:id', (req, res) => {//returning all
 				res.status(500).json({message: 'Internal server error'})
 		});
 });
-
 
 app.get('/terms', (req, res) => {
 	console.log('page is', req.query.page);
@@ -45,24 +43,7 @@ app.get('/terms', (req, res) => {
 					(term) => term.apiRepr())
 			});
 	})
-	// Vocab
-	// 	.find(filters)
-		// .paginate({}, { page: 3, limit: 10 })
-		// .find().limit(10)
-		// .then(terms => {
-		// 	res.json({
-		// 		terms: terms.map(
-		// 			(term) => term.apiRepr())
-		// 	});
-		// })
-		// .find(filters)
-		// .then(terms => res.json( 
-		// 	terms.map(term => term.apiRepr())
-		// ))
-		// .catch(err => {
-		// 	console.log(err);
-		// 	res.status(500).json({message: 'Internal server error'})
-		// });
+
 });
 
 app.post('/terms', (req, res) => {
@@ -132,7 +113,6 @@ app.use('*', function(req, res) {
 
 let server;
 
-// this function connects to our database, then starts the server
 function runServer(databaseUrl=DATABASE_URL, port=PORT) {
 
   return new Promise((resolve, reject) => {
@@ -152,8 +132,6 @@ function runServer(databaseUrl=DATABASE_URL, port=PORT) {
   });
 }
 
-// this function closes the server, and returns a promise. we'll
-// use it in our integration tests later.
 function closeServer() {
   return mongoose.disconnect().then(() => {
      return new Promise((resolve, reject) => {
@@ -168,15 +146,12 @@ function closeServer() {
   });
 }
 
-// if server.js is called directly (aka, with `node server.js`), this block
-// runs. but we also export the runServer command so other code (for instance, test code) can start the server as needed.
 if (require.main === module) {
   runServer().catch(err => console.error(err));
 };
 
-// module.exports = {app, runServer, closeServer};
+
 module.exports = {app, runServer, closeServer};
-// app.use(express.static('public'));
-// app.listen(process.env.PORT || 8080);
+
 
 

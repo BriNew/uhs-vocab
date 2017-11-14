@@ -3,8 +3,8 @@ const uniqueValidator = require('mongoose-unique-validator');
 const mongoosePaginate = require('mongoose-paginate');
 
 const vocabSchema = mongoose.Schema({
-  year:{type: String, required: true},//change to Number?
-  type_select:{type: String, required: true},//change to type_select?
+  year:{type: String, required: true},
+  type_select:{type: String, required: true},
   english:{type: String, required: true, unique: true},
   lao:{type: String, required: true}
 });
