@@ -6,7 +6,7 @@ out of class. The creation of this app goes side by side with the creation of a 
 program at the University. The app will give the future medical professionals of Laos the uniformity in medical 
 terminology they need to efficiently study. 
 
-![screenshot](https://github.com/BriNew/nyt-search-api/raw/master/img/nytapiscreenshot1.png)
+![image](https://user-images.githubusercontent.com/24151430/32761036-0ba7ed98-c8a6-11e7-86a8-410877535a96.png)
 
 
 
