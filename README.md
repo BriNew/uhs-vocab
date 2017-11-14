@@ -14,7 +14,7 @@ The app is meant for students of the English program and their teachers. Student
 are responsible for by class(year 1, 2, or 3) and part(prefix, root, suffix). The teachers can add words as
 they see fit. Currently, there are five teachers in the English program that will be given the "secret" required
 to add words to the app. The database will be updated as the curriculum is updated, and any placeholder text will
-be replaced. The app will eventually be primarily Lao in language.
+be replaced. The app will eventually be primarily Lao in language. ໂຊກດີ!
 
 ### Technology Used
  - HTML5
