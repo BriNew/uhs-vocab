@@ -85,7 +85,7 @@ $(document).ready(function() {
 		$('#user_select').hide();
 		$('#form_post').hide();
 		$('#no_results_message').hide();
-    $('#page_button_container').hide();
+  	$('#page_button_container').hide();
 		$('#html').delay(100).show(0);
 	};
 
@@ -128,45 +128,45 @@ $(document).ready(function() {
 
 
 	if (window.matchMedia("(max-width: 640px)").matches) {
-  	$('a[href="#mobile_dropdown_class_outer"]').click(function(){
-  		$('#mobile_dropdown_class_inner').toggle();
-		}); 
-    $('a[href="#mobile_dropdown_part_outer"]').click(function(){
-  		$('#mobile_dropdown_part_inner').toggle();
-	 	}); 
-    $('a[href="#mobile_dropdown_user_outer"]').click(function(){
-  		$('#mobile_dropdown_user_inner').toggle();
-	 	}); 
-    $('a[href="#nav_part_all"]').click(function(){
-  		$('#mobile_dropdown_part_inner').toggle();
-	 	}); 
-    $('a[href="#nav_part_prefix"]').click(function(){
-  		$('#mobile_dropdown_part_inner').toggle();
-	 	}); 
-    $('a[href="#nav_part_root"]').click(function(){
-  		$('#mobile_dropdown_part_inner').toggle();
-	 	}); 
-    $('a[href="#nav_part_suffix"]').click(function(){
-  		$('#mobile_dropdown_part_inner').toggle();
-	 	}); 
-    $('a[href="#nav_year_all"]').click(function(){
-  		$('#mobile_dropdown_class_inner').toggle();
-	 	}); 
-    $('a[href="#nav_year_1"]').click(function(){
-  		$('#mobile_dropdown_class_inner').toggle();
-	 	}); 
-    $('a[href="#nav_year_2"]').click(function(){
-  		$('#mobile_dropdown_class_inner').toggle();
-	 	}); 
-    $('a[href="#nav_year_3"]').click(function(){
-  		$('#mobile_dropdown_class_inner').toggle();
-	 	}); 
-    $('a[href="#nav_user_teacher"]').click(function(){
-  		$('#mobile_dropdown_user_inner').toggle();
-	 	}); 
-    $('a[href="#nav_user_student"]').click(function(){
-  		$('#mobile_dropdown_user_inner').toggle();
-	 	}); 
+	  	$('a[href="#mobile_dropdown_class_outer"]').click(function(){
+	  		$('#mobile_dropdown_class_inner').toggle();
+			}); 
+	    $('a[href="#mobile_dropdown_part_outer"]').click(function(){
+	  		$('#mobile_dropdown_part_inner').toggle();
+		 	}); 
+	    $('a[href="#mobile_dropdown_user_outer"]').click(function(){
+	  		$('#mobile_dropdown_user_inner').toggle();
+		 	}); 
+	    $('a[href="#nav_part_all"]').click(function(){
+	  		$('#mobile_dropdown_part_inner').toggle();
+		 	}); 
+	    $('a[href="#nav_part_prefix"]').click(function(){
+	  		$('#mobile_dropdown_part_inner').toggle();
+		 	}); 
+	    $('a[href="#nav_part_root"]').click(function(){
+	  		$('#mobile_dropdown_part_inner').toggle();
+		 	}); 
+	    $('a[href="#nav_part_suffix"]').click(function(){
+	  		$('#mobile_dropdown_part_inner').toggle();
+		 	}); 
+	    $('a[href="#nav_year_all"]').click(function(){
+	  		$('#mobile_dropdown_class_inner').toggle();
+		 	}); 
+	    $('a[href="#nav_year_1"]').click(function(){
+	  		$('#mobile_dropdown_class_inner').toggle();
+		 	}); 
+	    $('a[href="#nav_year_2"]').click(function(){
+	  		$('#mobile_dropdown_class_inner').toggle();
+		 	}); 
+	    $('a[href="#nav_year_3"]').click(function(){
+	  		$('#mobile_dropdown_class_inner').toggle();
+		 	}); 
+	    $('a[href="#nav_user_teacher"]').click(function(){
+	  		$('#mobile_dropdown_user_inner').toggle();
+		 	}); 
+	    $('a[href="#nav_user_student"]').click(function(){
+	  		$('#mobile_dropdown_user_inner').toggle();
+		 	}); 
 	}; 
 
   $('a[href="#add_word"]').click(function(){
@@ -211,7 +211,7 @@ $(document).ready(function() {
   }); 
 
   $('a[href="#nav_year_3"]').click(function(){
-		pageNum = 0;
+	  pageNum = 0;
 	  displayYear(3);
 	  $('#class_selected').text('Class: Year ' + year);
 	  pageIncrement();
@@ -233,19 +233,19 @@ $(document).ready(function() {
   }); 
 
 	$('a[href="#nav_part_prefix"]').click(function(){
-		pageNum = 0;
-    displayPart('prefix');
-    $('#part_selected').text('Part: ' + type_select);
-    pageIncrement();
-    getTerms(pageNum);
+	  pageNum = 0;
+	  displayPart('prefix');
+      $('#part_selected').text('Part: ' + type_select);
+      pageIncrement();  
+      getTerms(pageNum);
   }); 
  
 	$('a[href="#nav_part_root"]').click(function(){
-		pageNum = 0;
-    displayPart('root');
-    $('#part_selected').text('Part: ' + type_select);
-    pageIncrement();
-    getTerms(pageNum);
+	  pageNum = 0;
+      displayPart('root');
+      $('#part_selected').text('Part: ' + type_select);
+      pageIncrement();
+      getTerms(pageNum);
   }); 
  
   $('a[href="#nav_part_suffix"]').click(function(){
