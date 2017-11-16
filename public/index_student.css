@@ -11,7 +11,7 @@ h1 {
   display: none;
 }
 
-.results, .student .ul_outer, .frame_post_container, .results_static, .banner {
+.results, .ul_outer, .frame_post_container, .results_static, .banner {
   display: flex;
 }
 
