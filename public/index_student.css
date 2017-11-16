@@ -11,7 +11,7 @@ h1 {
   display: none;
 }
 
-.results, .ul_outer, .frame_post_container, .results_static, .banner {
+.results, .student .ul_outer, .frame_post_container, .results_static, .banner {
   display: flex;
 }
 
@@ -328,7 +328,7 @@ a, a:hover {
 }
 
 .user_select {
-  margin: auto;
+  margin-right: auto;
 }
 
 .select_container {
