@@ -2,6 +2,10 @@ h1 {
   font-family: 'Libre Baskerville', serif;
 }
 
+body {
+  margin: 0;
+}
+
 .banner_container {
   background-color: #843c3c;
   width: 100%;
