@@ -2,6 +2,15 @@ h1 {
   font-family: 'Libre Baskerville', serif;
 }
 
+.banner_container {
+  background-color: #843c3c;
+  width: 100%;
+}
+
+.nav_bar {
+  background-color: #A64C4C;
+}
+
 .titles_nav, .subtitles_nav {
   font-family: 'Slabo 27px', serif;
   z-index: 1;
