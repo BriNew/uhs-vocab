@@ -382,3 +382,18 @@ h3, .page {
 
 }
 
+footer {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #843c3c;
+}
+
+.footer_p {
+  color: #EFE6DD;
+  text-align: center;
+  line-height: 20px;
+}
+
