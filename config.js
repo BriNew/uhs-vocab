@@ -2,6 +2,6 @@ const mlabDbUrl =  "mongodb://BriNew:133Finnish@ds149124.mlab.com:49124/vocab_ap
 
 exports.DATABASE_URL = process.env.DATABASE_URL ||
                        global.DATABASE_URL ||
-             	 	   mlabDbUrl;
+             	 	   'mongodb://localhost/vocabAppDb';
              	 	   
 exports.PORT = process.env.PORT || 8080;
