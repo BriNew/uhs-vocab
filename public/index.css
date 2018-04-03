@@ -4,6 +4,7 @@ h1 {
 
 h1 > a {
   color: #EFE6DD;
+  font-family: 'Libre Baskerville', serif;
 }
 
 h1 > a:hover {
