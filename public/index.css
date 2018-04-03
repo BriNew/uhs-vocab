@@ -407,10 +407,12 @@ h3, .page {
 
 .fa-arrow-left:before {
   padding-right: 10px;
+  margin-bottom: 5em;
 }
 
 .fa-arrow-right:before {
   padding-left: 10px;
+  margin-bottom: 5em;
 }
 
 .page {
