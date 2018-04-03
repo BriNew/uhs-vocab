@@ -48,6 +48,7 @@ body {
     padding: 10px;
     padding-bottom: 33px;
     margin-top: 23px;
+    margin-bottom: 1em;
   }
 
   .card{
@@ -90,6 +91,7 @@ body {
     padding: 10px;
     padding-bottom: 33px;
     margin-top: 23px;
+    margin-bottom: 1em;
   }
 
   .card {
@@ -136,6 +138,7 @@ body {
     padding: 10px;
     padding-bottom: 33px;
     margin-top: 20px;
+    margin-bottom: 4em;
   }
 
   .frame_post_container {
@@ -395,7 +398,7 @@ h3, .page {
 
 }
 
-footer {
+/*footer {
   height: 50px;
   width: 100%;
   position: fixed;
@@ -408,5 +411,5 @@ footer {
   color: #EFE6DD;
   text-align: center;
   line-height: 20px;
-}
+}*/
 

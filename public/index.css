@@ -28,6 +28,10 @@ body {
   display: flex;
 }
 
+.results_static {
+  margin-bottom: 50px;
+}
+
 @media (max-width: 379px) { 
   .results, .frame_post_container {
     flex-direction: column;
@@ -54,6 +58,7 @@ body {
     padding: 10px;
     padding-bottom: 33px;
     margin-top: 23px;
+    margin-bottom: 1em;
   }
 
   .card{
@@ -67,6 +72,7 @@ body {
   .select_container {
     margin-top: -21px;
   }
+
 }
 
 @media (min-width:380px) and (max-width: 640px) { 
@@ -94,6 +100,7 @@ body {
     padding: 10px;
     padding-bottom: 33px;
     margin-top: 23px;
+    margin-bottom: 1em;
   }
 
   .card{
@@ -140,6 +147,7 @@ body {
     padding: 10px;
     padding-bottom: 33px;
     margin-top: 20px;
+    margin-bottom: 4em;
   }
 
   .frame_post_container {
