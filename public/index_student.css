@@ -371,6 +371,7 @@ h3, .page {
   margin: auto;
   margin-top: -10px;
   text-align: center;
+  margin-bottom: 5em;
 }
 
 .next_page_button, .previous_page_button, .page {
@@ -387,12 +388,10 @@ h3, .page {
 
 .fa-arrow-left:before {
   padding-right: 10px;
-  margin-bottom: 5em;
 }
 
 .fa-arrow-right:before {
   padding-left: 10px;
-  margin-bottom: 5em;
 }
 
 .page {

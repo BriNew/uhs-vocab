@@ -391,6 +391,7 @@ h3, .page {
   margin: auto;
   margin-top: -10px;
   text-align: center;
+  margin-bottom: 5em;
 }
 
 .next_page_button, .previous_page_button, .page {
