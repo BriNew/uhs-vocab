@@ -127,8 +127,15 @@ $(document).ready(function() {
  	}); 
 
 
-	if (window.matchMedia("(max-width: 640px)").matches) {
-	  	$('a[href="#mobile_dropdown_class_outer"]').click(function(){
+     var mql = window.matchMedia("(max-width: 640px)")
+
+     mediaqueryresponse(mql)
+
+     mql.addListener(mediaqueryresponse)
+
+     function mediaqueryresponse(mql) {
+     	if(mql.matches) {
+ 		$('a[href="#mobile_dropdown_class_outer"]').click(function(){
 	  		$('#mobile_dropdown_class_inner').toggle();
 			}); 
 	    $('a[href="#mobile_dropdown_part_outer"]').click(function(){
@@ -166,8 +173,10 @@ $(document).ready(function() {
 		 	}); 
 	    $('a[href="#nav_user_student"]').click(function(){
 	  		$('#mobile_dropdown_user_inner').toggle();
-		 	}); 
-	}; 
+		 	});
+     	}
+     }
+
 
   $('a[href="#add_word"]').click(function(){
   	$('#results').hide();
@@ -307,3 +316,32 @@ $(document).ready(function() {
 });
 
 
+// if (window.matchMedia("(max-width: 800px)").matches) {
+//     // phone
+//     $(".front-page-1").backstretch(["/wp-content/themes/digital-pro/images/americas-tribute-to-paris-mobile.png"]);
+
+// } else {
+
+//     //tab or desktop
+//     $(".front-page-1").backstretch([BackStretchImg.src]);
+
+// }
+
+// var mql = window.matchMedia("(max-width: 800px)")
+
+// mediaqueryresponse(mql) // call listener function explicitly at run time
+
+// mql.addListener(mediaqueryresponse) // attach listener function to listen in on state changes
+
+// function mediaqueryresponse(mql){
+//      if (mql.matches){ // if media query matches
+
+//       // phone
+//         $(".front-page-1").backstretch(["/wp-content/themes/digital-pro/images/americas-tribute-to-paris-mobile.png"]);
+
+//     } else {
+
+//       //tab or desktop
+//         $(".front-page-1").backstretch([BackStretchImg.src]);
+
+//      }
