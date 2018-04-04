@@ -20,11 +20,9 @@ $(document).ready(function() {
 			function(data) {
 			  terms = data.terms.map((term, index) => showTerms(term));
   			$('#results').html(terms);
-  			console.log(terms.length);
   			if(terms.length == 0){
 					$('#no_results_message').show();
 					$('#next_page_button').hide();
-					console.log("please search again");
 				}
 			});	
 	};	
@@ -127,14 +125,14 @@ $(document).ready(function() {
  	}); 
 
 
-     var mql = window.matchMedia("(max-width: 640px)")
+     var mqlMobile = window.matchMedia("(max-width: 640px)");
 
-     mediaqueryresponse(mql)
+     mediaqueryresponse(mqlMobile)
 
-     mql.addListener(mediaqueryresponse)
+     mqlMobile.addListener(mediaqueryresponse)
 
-     function mediaqueryresponse(mql) {
-     	if(mql.matches) {
+     function mediaqueryresponse(mqlMobile, mqlDesktop) {
+     	if(mqlMobile.matches) {
  		$('a[href="#mobile_dropdown_class_outer"]').click(function(){
 	  		$('#mobile_dropdown_class_inner').toggle();
 			}); 
@@ -294,7 +292,6 @@ $(document).ready(function() {
 	  		lao: laoInput,
 	  		secret: secret
 	  	};
-	  console.log(payload);
 	  $.ajax({
 	  	type: "POST",
 	  	url: "/terms",
@@ -315,33 +312,3 @@ $(document).ready(function() {
 
 });
 
-
-// if (window.matchMedia("(max-width: 800px)").matches) {
-//     // phone
-//     $(".front-page-1").backstretch(["/wp-content/themes/digital-pro/images/americas-tribute-to-paris-mobile.png"]);
-
-// } else {
-
-//     //tab or desktop
-//     $(".front-page-1").backstretch([BackStretchImg.src]);
-
-// }
-
-// var mql = window.matchMedia("(max-width: 800px)")
-
-// mediaqueryresponse(mql) // call listener function explicitly at run time
-
-// mql.addListener(mediaqueryresponse) // attach listener function to listen in on state changes
-
-// function mediaqueryresponse(mql){
-//      if (mql.matches){ // if media query matches
-
-//       // phone
-//         $(".front-page-1").backstretch(["/wp-content/themes/digital-pro/images/americas-tribute-to-paris-mobile.png"]);
-
-//     } else {
-
-//       //tab or desktop
-//         $(".front-page-1").backstretch([BackStretchImg.src]);
-
-//      }
