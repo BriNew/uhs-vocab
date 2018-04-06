@@ -307,8 +307,10 @@ $(document).ready(function() {
 		  }
 	  })
 	   getTerms();
-	   $('#results').show();
-	   pageNum = 0;
+	   window.location.href = "/#nav_user_teacher";
+	   // $('#results').show();
+	   // location.reload();
+	   // pageNum = 0;
 	});
 
 });
