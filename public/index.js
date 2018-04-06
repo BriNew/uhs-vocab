@@ -303,8 +303,10 @@ $(document).ready(function() {
 		    	$('#results').hide();
 		       	$('#no_results_message').text('The provided secret is not correct');
 		       	$('#no_results_message').show();
-		    },
-		    200: function() {
+		    }
+		  },
+	    statusCode: {
+		  	200: function() {
 		    	alert("word added");
 		    }
 		  }
