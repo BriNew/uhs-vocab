@@ -304,32 +304,10 @@ $(document).ready(function() {
 		       	$('#no_results_message').text('The provided secret is not correct');
 		       	$('#no_results_message').show();
 		    }
-		  },
-	    statusCode: {
-		  	200: function() {
-		    	alert("word added");
-		    }
 		  }
 	  })
-
-  		$('#results').hide();
-    	$('#form_post').show();
-    	$('#no_results_message').hide();
-    	$('#user_student').hide();
-		$('#user_teacher').hide();
-		$('#results_static').hide();
-		$('#select_container').hide();
-		$('#page_button_container').hide();
-
-		$('#english_input').val(null);
-
-	  	$('#year_input').val(null);
-
- 	 	$('#type_select_input').val(null);
-
-	  	$('#lao_input').val(null);
-
-	  	$('#secret').val(null);
+	  pageNum = 0;
+	  getTerms();
 
 	});
 
