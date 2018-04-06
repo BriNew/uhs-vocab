@@ -306,11 +306,9 @@ $(document).ready(function() {
 		    }
 		  }
 	  })
+	   location.reload();
 	   getTerms();
-	   window.location.href = "http://www.vocab.us/#nav_user_teacher";
-	   // $('#results').show();
-	   // location.reload();
-	   // pageNum = 0;
+
 	});
 
 });
