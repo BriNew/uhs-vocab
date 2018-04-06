@@ -1,4 +1,4 @@
-### uhs-vocab-app
+### University of Health Sciences Vocabulary App
 http://www.vocab.us/
 
 ສະບາຍດີ, I teach medical English at the University of Health Sciences in Vientiane, Laos. There is a lack of uniformity
