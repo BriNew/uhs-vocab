@@ -308,6 +308,7 @@ $(document).ready(function() {
 	  })
 	   getTerms();
 	   $('#results').show();
+	   pageNum = 0;
 	});
 
 });
